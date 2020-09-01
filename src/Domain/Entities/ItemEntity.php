@@ -3,10 +3,11 @@
 namespace PhpBundle\Reference\Domain\Entities;
 
 use Illuminate\Support\Collection;
-use PhpLab\Core\Legacy\Yii\Helpers\Inflector;
-use Symfony\Component\Validator\Constraints as Assert;
-use PhpLab\Core\Domain\Interfaces\Entity\ValidateEntityInterface;
 use PhpLab\Core\Domain\Interfaces\Entity\EntityIdInterface;
+use PhpLab\Core\Domain\Interfaces\Entity\ValidateEntityInterface;
+use PhpLab\Core\Enums\StatusEnum;
+use Symfony\Component\Validator\Constraints as Assert;
+use DateTime;
 
 class ItemEntity implements ValidateEntityInterface, EntityIdInterface
 {
@@ -18,7 +19,7 @@ class ItemEntity implements ValidateEntityInterface, EntityIdInterface
     private $title = null;
     private $shortTitle = null;
     private $entity = null;
-    private $status = null;
+    private $status = StatusEnum::ENABLE;
     private $sort = null;
     private $props = null;
     private $createdAt = null;
@@ -27,9 +28,65 @@ class ItemEntity implements ValidateEntityInterface, EntityIdInterface
     /** @var Collection | ItemTranslationEntity[] */
     private $translations = null;
 
+    public function __construct()
+    {
+        $this->createdAt = new DateTime();
+    }
+
     public function validationRules()
     {
-        return [];
+        return [
+            /* = null;
+     = null;
+     = null;
+     = null;
+     = null;
+     = null;
+     = null;
+     = null;
+     = null;
+    $props = null;
+    $createdAt = null;
+    $updatedAt = null;*/
+
+
+            'id' => [
+                //new Assert\NotBlank,
+                new Assert\Positive,
+            ],
+            'bookId' => [
+                new Assert\NotBlank,
+                new Assert\Positive,
+            ],
+            'parentId' => [
+                //new Assert\NotBlank,
+                new Assert\Positive,
+            ],
+            'status' => [
+                new Assert\NotBlank,
+                new Assert\Positive,
+            ],
+            'sort' => [
+                //new Assert\NotBlank,
+                new Assert\Positive,
+            ],
+            /*'code' => [
+                new Assert\NotBlank,
+            ],*/
+            'title' => [
+                new Assert\NotBlank,
+            ],
+            /*'created_at' => [
+                new Assert\DateTime,
+            ],*/
+            /*'shortTitle' => [
+                new Assert\NotBlank,
+            ],
+            'entity' => [
+                new Assert\NotBlank,
+            ],*/
+
+        ];
     }
 
     public function setId($value)
@@ -74,7 +131,7 @@ class ItemEntity implements ValidateEntityInterface, EntityIdInterface
 
     public function getTitle()
     {
-        if(empty($this->title) && $this->translations->count()) {
+        if (empty($this->title) && !empty($this->translations) && $this->translations->count()) {
             /** @var ItemTranslationEntity $translationEntity */
             $translationEntity = $this->translations->first();
             $this->title = $translationEntity->getTitle();
@@ -89,7 +146,7 @@ class ItemEntity implements ValidateEntityInterface, EntityIdInterface
 
     public function getShortTitle()
     {
-        if(empty($this->shortTitle) && $this->translations->count()) {
+        if (empty($this->shortTitle) && !empty($this->translations) && $this->translations->count()) {
             /** @var ItemTranslationEntity $translationEntity */
             $translationEntity = $this->translations->first();
             $this->shortTitle = $translationEntity->getShortTitle();
@@ -162,12 +219,12 @@ class ItemEntity implements ValidateEntityInterface, EntityIdInterface
         return $this->updatedAt;
     }
 
-    public function getTranslations(): Collection
+    public function getTranslations(): ?Collection
     {
         return $this->translations;
     }
 
-    public function setTranslations(Collection $translations): void
+    public function setTranslations(Collection $translations = null): void
     {
         $this->translations = $translations;
     }

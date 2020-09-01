@@ -17,8 +17,9 @@ class m_2020_02_29_151118_create_item_table extends BaseCreateTableMigration
             $table->integer('id')->autoIncrement()->comment('Идентификатор');
             $table->integer('book_id')->comment('');
             $table->integer('parent_id')->nullable()->comment('');
-            $table->string('code')->comment('');
-            $table->string('entity')->comment('');
+            $table->string('title')->nullable()->comment('');
+            $table->string('code')->nullable()->comment('');
+            $table->string('entity')->nullable()->comment('');
             $table->smallInteger('status')->comment('Статус');
             $table->integer('sort')->nullable()->comment('Порядок сортировки');
             $table->string('props')->nullable()->comment('');

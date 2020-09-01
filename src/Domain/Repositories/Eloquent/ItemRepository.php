@@ -6,6 +6,7 @@ use Illuminate\Support\Collection;
 use PhpBundle\Reference\Domain\Entities\ItemEntity;
 use PhpBundle\Reference\Domain\Interfaces\Repositories\ItemRepositoryInterface;
 use PhpLab\Core\Domain\Enums\RelationEnum;
+use PhpLab\Core\Domain\Interfaces\Entity\EntityIdInterface;
 use PhpLab\Core\Domain\Libs\Query;
 use PhpLab\Core\Domain\Libs\Relation\OneToMany;
 use PhpLab\Eloquent\Db\Base\BaseEloquentCrudRepository;
