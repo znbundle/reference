@@ -1,10 +1,10 @@
 <?php
 
-namespace PhpBundle\Reference\Domain\Repositories\Eloquent;
+namespace ZnBundle\Reference\Domain\Repositories\Eloquent;
 
-use PhpBundle\Reference\Domain\Entities\BookEntity;
-use PhpBundle\Reference\Domain\Interfaces\Repositories\BookRepositoryInterface;
-use PhpLab\Eloquent\Db\Base\BaseEloquentCrudRepository;
+use ZnBundle\Reference\Domain\Entities\BookEntity;
+use ZnBundle\Reference\Domain\Interfaces\Repositories\BookRepositoryInterface;
+use ZnCore\Db\Db\Base\BaseEloquentCrudRepository;
 
 class BookRepository extends BaseEloquentCrudRepository implements BookRepositoryInterface
 {

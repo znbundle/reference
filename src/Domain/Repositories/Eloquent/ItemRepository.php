@@ -1,16 +1,16 @@
 <?php
 
-namespace PhpBundle\Reference\Domain\Repositories\Eloquent;
+namespace ZnBundle\Reference\Domain\Repositories\Eloquent;
 
 use Illuminate\Support\Collection;
-use PhpBundle\Reference\Domain\Entities\ItemEntity;
-use PhpBundle\Reference\Domain\Interfaces\Repositories\ItemRepositoryInterface;
-use PhpLab\Core\Domain\Enums\RelationEnum;
-use PhpLab\Core\Domain\Interfaces\Entity\EntityIdInterface;
-use PhpLab\Core\Domain\Libs\Query;
-use PhpLab\Core\Domain\Libs\Relation\OneToMany;
-use PhpLab\Eloquent\Db\Base\BaseEloquentCrudRepository;
-use PhpLab\Eloquent\Db\Helpers\Manager;
+use ZnBundle\Reference\Domain\Entities\ItemEntity;
+use ZnBundle\Reference\Domain\Interfaces\Repositories\ItemRepositoryInterface;
+use ZnCore\Base\Domain\Enums\RelationEnum;
+use ZnCore\Base\Domain\Interfaces\Entity\EntityIdInterface;
+use ZnCore\Base\Domain\Libs\Query;
+use ZnCore\Base\Domain\Libs\Relation\OneToMany;
+use ZnCore\Db\Db\Base\BaseEloquentCrudRepository;
+use ZnCore\Db\Db\Helpers\Manager;
 
 class ItemRepository extends BaseEloquentCrudRepository implements ItemRepositoryInterface
 {

@@ -1,14 +1,14 @@
 <?php
 
-namespace PhpBundle\Reference\Domain\Repositories\Eloquent;
+namespace ZnBundle\Reference\Domain\Repositories\Eloquent;
 
-use PhpBundle\Reference\Domain\Entities\ItemTranslationEntity;
-use PhpBundle\Reference\Domain\Interfaces\Repositories\ItemTranslationRepositoryInterface;
-use PhpLab\Core\Domain\Entities\Query\Where;
-use PhpLab\Core\Domain\Libs\Query;
-use PhpLab\Core\Libs\I18Next\Interfaces\Services\TranslationServiceInterface;
-use PhpLab\Eloquent\Db\Base\BaseEloquentCrudRepository;
-use PhpLab\Eloquent\Db\Helpers\Manager;
+use ZnBundle\Reference\Domain\Entities\ItemTranslationEntity;
+use ZnBundle\Reference\Domain\Interfaces\Repositories\ItemTranslationRepositoryInterface;
+use ZnCore\Base\Domain\Entities\Query\Where;
+use ZnCore\Base\Domain\Libs\Query;
+use ZnCore\Base\Libs\I18Next\Interfaces\Services\TranslationServiceInterface;
+use ZnCore\Db\Db\Base\BaseEloquentCrudRepository;
+use ZnCore\Db\Db\Helpers\Manager;
 
 class ItemTranslationRepository extends BaseEloquentCrudRepository implements ItemTranslationRepositoryInterface
 {

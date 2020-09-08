@@ -1,13 +1,13 @@
 <?php
 
-namespace PhpBundle\Reference\Yii\Api\controllers;
+namespace ZnBundle\Reference\Yii\Api\controllers;
 
 use Packages\RestClient\Domain\Enums\RestClientPermissionEnum;
 use Packages\RestClient\Domain\Interfaces\Services\BookmarkServiceInterface;
 use Packages\RestClient\Domain\Interfaces\Services\ProjectServiceInterface;
-use PhpBundle\Reference\Domain\Enums\ReferenceBookPermissionEnum;
-use PhpBundle\Reference\Domain\Interfaces\Services\BookServiceInterface;
-use PhpBundle\Reference\Domain\Services\BookService;
+use ZnBundle\Reference\Domain\Enums\ReferenceBookPermissionEnum;
+use ZnBundle\Reference\Domain\Interfaces\Services\BookServiceInterface;
+use ZnBundle\Reference\Domain\Services\BookService;
 use yii\base\Module;
 use RocketLab\Bundle\Rest\Base\BaseCrudController;
 

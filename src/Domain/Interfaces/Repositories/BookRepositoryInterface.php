@@ -1,8 +1,8 @@
 <?php
 
-namespace PhpBundle\Reference\Domain\Interfaces\Repositories;
+namespace ZnBundle\Reference\Domain\Interfaces\Repositories;
 
-use PhpLab\Core\Domain\Interfaces\Repository\CrudRepositoryInterface;
+use ZnCore\Base\Domain\Interfaces\Repository\CrudRepositoryInterface;
 
 interface BookRepositoryInterface extends CrudRepositoryInterface
 {

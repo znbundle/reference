@@ -1,8 +1,8 @@
 <?php
 
-namespace PhpBundle\Reference\Domain\Enums;
+namespace ZnBundle\Reference\Domain\Enums;
 
-use PhpLab\Core\Domain\Base\BaseEnum;
+use ZnCore\Base\Domain\Base\BaseEnum;
 
 class ReferenceBookPermissionEnum extends BaseEnum
 {

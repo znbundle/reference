@@ -1,14 +1,14 @@
 <?php
 
-namespace PhpBundle\Reference\Domain\Services;
+namespace ZnBundle\Reference\Domain\Services;
 
-use PhpBundle\Reference\Domain\Interfaces\Services\ItemTranslationServiceInterface;
-use PhpLab\Core\Domain\Base\BaseCrudService;
+use ZnBundle\Reference\Domain\Interfaces\Services\ItemTranslationServiceInterface;
+use ZnCore\Base\Domain\Base\BaseCrudService;
 
 class ItemTranslationService extends BaseCrudService implements ItemTranslationServiceInterface
 {
 
-    public function __construct(\PhpBundle\Reference\Domain\Interfaces\Repositories\ItemTranslationRepositoryInterface $repository)
+    public function __construct(\ZnBundle\Reference\Domain\Interfaces\Repositories\ItemTranslationRepositoryInterface $repository)
     {
         $this->repository = $repository;
     }

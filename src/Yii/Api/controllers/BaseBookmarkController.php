@@ -1,9 +1,9 @@
 <?php
 
-namespace PhpBundle\Reference\Yii\Api\controllers;
+namespace ZnBundle\Reference\Yii\Api\controllers;
 
-use PhpLab\Core\Domain\Helpers\QueryHelper;
-use PhpLab\Core\Exceptions\NotFoundException;
+use ZnCore\Base\Domain\Helpers\QueryHelper;
+use ZnCore\Base\Exceptions\NotFoundException;
 use Packages\RestClient\Domain\Enums\RestClientPermissionEnum;
 use Packages\RestClient\Domain\Interfaces\Services\BookmarkServiceInterface;
 use yii\base\Module;
