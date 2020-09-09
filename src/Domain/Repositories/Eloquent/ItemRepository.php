@@ -5,10 +5,10 @@ namespace ZnBundle\Reference\Domain\Repositories\Eloquent;
 use Illuminate\Support\Collection;
 use ZnBundle\Reference\Domain\Entities\ItemEntity;
 use ZnBundle\Reference\Domain\Interfaces\Repositories\ItemRepositoryInterface;
-use ZnCore\Base\Domain\Enums\RelationEnum;
-use ZnCore\Base\Domain\Interfaces\Entity\EntityIdInterface;
-use ZnCore\Base\Domain\Libs\Query;
-use ZnCore\Base\Domain\Libs\Relation\OneToMany;
+use ZnCore\Domain\Enums\RelationEnum;
+use ZnCore\Domain\Interfaces\Entity\EntityIdInterface;
+use ZnCore\Domain\Libs\Query;
+use ZnCore\Domain\Libs\Relation\OneToMany;
 use ZnCore\Db\Db\Base\BaseEloquentCrudRepository;
 use ZnCore\Db\Db\Helpers\Manager;
 

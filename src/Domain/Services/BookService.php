@@ -3,7 +3,7 @@
 namespace ZnBundle\Reference\Domain\Services;
 
 use ZnBundle\Reference\Domain\Interfaces\Services\BookServiceInterface;
-use ZnCore\Base\Domain\Base\BaseCrudService;
+use ZnCore\Domain\Base\BaseCrudService;
 
 class BookService extends BaseCrudService implements BookServiceInterface
 {

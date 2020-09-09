@@ -4,8 +4,8 @@ namespace ZnBundle\Reference\Domain\Repositories\Eloquent;
 
 use ZnBundle\Reference\Domain\Entities\ItemTranslationEntity;
 use ZnBundle\Reference\Domain\Interfaces\Repositories\ItemTranslationRepositoryInterface;
-use ZnCore\Base\Domain\Entities\Query\Where;
-use ZnCore\Base\Domain\Libs\Query;
+use ZnCore\Domain\Entities\Query\Where;
+use ZnCore\Domain\Libs\Query;
 use ZnCore\Base\Libs\I18Next\Interfaces\Services\TranslationServiceInterface;
 use ZnCore\Db\Db\Base\BaseEloquentCrudRepository;
 use ZnCore\Db\Db\Helpers\Manager;

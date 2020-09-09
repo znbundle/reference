@@ -2,7 +2,7 @@
 
 namespace ZnBundle\Reference\Yii\Api\controllers;
 
-use ZnCore\Base\Domain\Helpers\QueryHelper;
+use ZnCore\Domain\Helpers\QueryHelper;
 use ZnCore\Base\Exceptions\NotFoundException;
 use Packages\RestClient\Domain\Enums\RestClientPermissionEnum;
 use Packages\RestClient\Domain\Interfaces\Services\BookmarkServiceInterface;

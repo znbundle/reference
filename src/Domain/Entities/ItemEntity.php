@@ -3,8 +3,8 @@
 namespace ZnBundle\Reference\Domain\Entities;
 
 use Illuminate\Support\Collection;
-use ZnCore\Base\Domain\Interfaces\Entity\EntityIdInterface;
-use ZnCore\Base\Domain\Interfaces\Entity\ValidateEntityInterface;
+use ZnCore\Domain\Interfaces\Entity\EntityIdInterface;
+use ZnCore\Domain\Interfaces\Entity\ValidateEntityInterface;
 use ZnCore\Base\Enums\StatusEnum;
 use Symfony\Component\Validator\Constraints as Assert;
 use DateTime;

@@ -2,7 +2,7 @@
 
 namespace ZnBundle\Reference\Domain\Enums;
 
-use ZnCore\Base\Domain\Base\BaseEnum;
+use ZnCore\Domain\Base\BaseEnum;
 
 class ReferenceBookPermissionEnum extends BaseEnum
 {
