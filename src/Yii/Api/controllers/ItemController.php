@@ -10,7 +10,7 @@ use ZnBundle\Reference\Domain\Interfaces\Services\BookServiceInterface;
 use ZnBundle\Reference\Domain\Services\BookService;
 use ZnBundle\Reference\Domain\Services\ItemService;
 use yii\base\Module;
-use RocketLab\Bundle\Rest\Base\BaseCrudController;
+use ZnLib\Rest\Yii2\Base\BaseCrudController;
 
 class ItemController extends BaseCrudController
 {

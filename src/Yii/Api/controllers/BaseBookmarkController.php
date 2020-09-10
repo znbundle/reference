@@ -7,7 +7,7 @@ use ZnCore\Base\Exceptions\NotFoundException;
 use Packages\RestClient\Domain\Enums\RestClientPermissionEnum;
 use Packages\RestClient\Domain\Interfaces\Services\BookmarkServiceInterface;
 use yii\base\Module;
-use RocketLab\Bundle\Rest\Base\BaseCrudController;
+use ZnLib\Rest\Yii2\Base\BaseCrudController;
 use yii\web\NotFoundHttpException;
 
 /**
