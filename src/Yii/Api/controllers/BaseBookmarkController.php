@@ -4,15 +4,15 @@ namespace ZnBundle\Reference\Yii\Api\controllers;
 
 use ZnCore\Domain\Helpers\QueryHelper;
 use ZnCore\Base\Exceptions\NotFoundException;
-use Packages\RestClient\Domain\Enums\RestClientPermissionEnum;
-use Packages\RestClient\Domain\Interfaces\Services\BookmarkServiceInterface;
+use ZnBundle\RestClient\Domain\Enums\RestClientPermissionEnum;
+use ZnBundle\RestClient\Domain\Interfaces\Services\BookmarkServiceInterface;
 use yii\base\Module;
 use ZnLib\Rest\Yii2\Base\BaseCrudController;
 use yii\web\NotFoundHttpException;
 
 /**
  * Class BaseBookmarkController
- * @package Packages\RestClient\Yii\Api\controllers
+ * @package ZnBundle\RestClient\Yii\Api\controllers
  *
  * @property-read BookmarkServiceInterface $service
  */
