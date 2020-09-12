@@ -2,9 +2,9 @@
 
 namespace ZnBundle\Reference\Yii\Api\controllers;
 
-use ZnBundle\RestClient\Domain\Enums\RestClientPermissionEnum;
-use ZnBundle\RestClient\Domain\Interfaces\Services\BookmarkServiceInterface;
-use ZnBundle\RestClient\Domain\Interfaces\Services\ProjectServiceInterface;
+use ZnTool\RestClient\Domain\Enums\RestClientPermissionEnum;
+use ZnTool\RestClient\Domain\Interfaces\Services\BookmarkServiceInterface;
+use ZnTool\RestClient\Domain\Interfaces\Services\ProjectServiceInterface;
 use ZnBundle\Reference\Domain\Enums\ReferenceBookPermissionEnum;
 use ZnBundle\Reference\Domain\Interfaces\Services\BookServiceInterface;
 use ZnBundle\Reference\Domain\Services\BookService;
