@@ -1,6 +1,6 @@
 <?php
 
-namespace ZnBundle\Reference\Yii\Api\controllers;
+namespace ZnBundle\Reference\Yii2\Api\controllers;
 
 use ZnCore\Domain\Helpers\QueryHelper;
 use ZnCore\Base\Exceptions\NotFoundException;
@@ -12,7 +12,7 @@ use yii\web\NotFoundHttpException;
 
 /**
  * Class BaseBookmarkController
- * @package ZnTool\RestClient\Yii\Api\controllers
+ * @package ZnTool\RestClient\Yii2\Api\controllers
  *
  * @property-read BookmarkServiceInterface $service
  */

@@ -1,6 +1,6 @@
 <?php
 
-namespace ZnBundle\Reference\Yii\Api;
+namespace ZnBundle\Reference\Yii2\Api;
 
 use yii\base\Module as YiiModule;
 
