@@ -2,7 +2,9 @@
 
 namespace ZnBundle\Reference\Domain\Enums;
 
-class ReferenceBookPermissionEnum
+use ZnCore\Base\Interfaces\GetLabelsInterface;
+
+class ReferenceBookPermissionEnum implements GetLabelsInterface
 {
 
     const WRITE = 'oReferenceBookWrite';
