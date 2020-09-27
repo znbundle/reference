@@ -10,7 +10,7 @@ use ZnCore\Domain\Interfaces\Entity\EntityIdInterface;
 use ZnCore\Domain\Libs\Query;
 use ZnCore\Domain\Libs\Relation\OneToMany;
 use ZnCore\Db\Db\Base\BaseEloquentCrudRepository;
-use ZnCore\Db\Db\Helpers\Manager;
+use ZnCore\Db\Db\Capsule\Manager;
 
 class ItemRepository extends BaseEloquentCrudRepository implements ItemRepositoryInterface
 {

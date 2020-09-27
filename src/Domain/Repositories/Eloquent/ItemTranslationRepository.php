@@ -8,7 +8,7 @@ use ZnCore\Domain\Entities\Query\Where;
 use ZnCore\Domain\Libs\Query;
 use ZnCore\Base\Libs\I18Next\Interfaces\Services\TranslationServiceInterface;
 use ZnCore\Db\Db\Base\BaseEloquentCrudRepository;
-use ZnCore\Db\Db\Helpers\Manager;
+use ZnCore\Db\Db\Capsule\Manager;
 
 class ItemTranslationRepository extends BaseEloquentCrudRepository implements ItemTranslationRepositoryInterface
 {
