@@ -9,8 +9,8 @@ use ZnCore\Domain\Enums\RelationEnum;
 use ZnCore\Domain\Interfaces\Entity\EntityIdInterface;
 use ZnCore\Domain\Libs\Query;
 use ZnCore\Domain\Libs\Relation\OneToMany;
-use ZnCore\Db\Db\Base\BaseEloquentCrudRepository;
-use ZnCore\Db\Db\Capsule\Manager;
+use ZnLib\Db\Base\BaseEloquentCrudRepository;
+use ZnLib\Db\Capsule\Manager;
 
 class ItemRepository extends BaseEloquentCrudRepository implements ItemRepositoryInterface
 {
