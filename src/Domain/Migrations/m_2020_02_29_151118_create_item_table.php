@@ -9,17 +9,17 @@ class m_2020_02_29_151118_create_item_table extends BaseCreateTableMigration
 {
 
     protected $tableName = 'reference_item';
-    protected $tableComment = '';
+    protected $tableComment = 'Значения справочника';
 
     public function tableSchema()
     {
         return function (Blueprint $table) {
             $table->integer('id')->autoIncrement()->comment('Идентификатор');
-            $table->integer('book_id')->comment('');
-            $table->integer('parent_id')->nullable()->comment('');
-            $table->string('title')->nullable()->comment('');
-            $table->string('code')->nullable()->comment('');
-            $table->string('entity')->nullable()->comment('');
+            $table->integer('book_id')->comment('ID справочника');
+            $table->integer('parent_id')->nullable()->comment('ID родительского значения');
+            $table->string('title')->nullable()->comment('Название');
+            $table->string('code')->nullable()->comment('Внутренний код');
+            $table->string('entity')->nullable()->comment('Имя сущности');
             $table->smallInteger('status')->comment('Статус');
             $table->integer('sort')->nullable()->comment('Порядок сортировки');
             $table->string('props')->nullable()->comment('');
