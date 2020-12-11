@@ -3,12 +3,14 @@
 namespace ZnBundle\Reference\Domain\Repositories\Eloquent;
 
 use Illuminate\Support\Collection;
+use Packages\Eav\Domain\Interfaces\Repositories\ValidationRepositoryInterface;
 use ZnBundle\Reference\Domain\Entities\ItemEntity;
 use ZnBundle\Reference\Domain\Interfaces\Repositories\ItemRepositoryInterface;
 use ZnCore\Domain\Enums\RelationEnum;
 use ZnCore\Domain\Interfaces\Entity\EntityIdInterface;
 use ZnCore\Domain\Libs\Query;
 use ZnCore\Domain\Libs\Relation\OneToMany;
+use ZnCore\Domain\Relations\relations\OneToManyRelation;
 use ZnLib\Db\Base\BaseEloquentCrudRepository;
 use ZnLib\Db\Capsule\Manager;
 
@@ -23,12 +25,6 @@ class ItemRepository extends BaseEloquentCrudRepository implements ItemRepositor
         return ItemEntity::class;
     }
 
-    public function __construct(Manager $capsule, ItemTranslationRepository $translationRepository)
-    {
-        parent::__construct($capsule);
-        $this->translationRepository = $translationRepository;
-    }
-
     protected function forgeQuery(Query $query = null)
     {
         $query = parent::forgeQuery($query);
@@ -36,35 +32,16 @@ class ItemRepository extends BaseEloquentCrudRepository implements ItemRepositor
         return $query;
     }
 
-    public function relations()
+    public function relations2()
     {
         return [
-            'translations' => [
-                'type' => RelationEnum::CALLBACK,
-                'callback' => function (Collection $collection) {
-                    $m2m = new OneToMany;
-                    $m2m->selfModel = $this;
-                    $m2m->foreignModel = $this->translationRepository;
-                    $m2m->selfField = 'itemId';
-                    $m2m->foreignContainerField = 'translations';
-                    $m2m->run($collection);
-                },
+            [
+                'class' => OneToManyRelation::class,
+                'relationAttribute' => 'id',
+                'relationEntityAttribute' => 'translations',
+                'foreignRepositoryClass' => ItemTranslationRepository::class,
+                'foreignAttribute' => 'item_id',
             ],
-
-
-            /*'translation' => [
-                'type' => RelationEnum::CALLBACK,
-                'callback' => function (Collection $collection) {
-                    $m2m = new OneToOne;
-                    //$m2m->selfModel = $this;
-
-                    $m2m->foreignModel = $this->translationRepository;
-                    $m2m->foreignField = 'itemId';
-                    $m2m->foreignContainerField = 'translation';
-
-                    $m2m->run($collection);
-                },
-            ],*/
         ];
     }
 }
