@@ -20,10 +20,12 @@ class ItemEntity implements ValidateEntityInterface, EntityIdInterface
     private $shortTitle = null;
     private $entity = null;
     private $status = StatusEnum::ENABLE;
-    private $sort = null;
+    private $sort = 0;
     private $props = null;
     private $createdAt = null;
     private $updatedAt = null;
+    private $book;
+    private $parent;
 
     /** @var Collection | ItemTranslationEntity[] */
     private $translations = null;
@@ -227,6 +229,26 @@ class ItemEntity implements ValidateEntityInterface, EntityIdInterface
     public function setTranslations(Collection $translations = null): void
     {
         $this->translations = $translations;
+    }
+
+    public function getBook(): ?BookEntity
+    {
+        return $this->book;
+    }
+
+    public function setBook(BookEntity $book): void
+    {
+        $this->book = $book;
+    }
+
+    public function getParent(): ?ItemEntity
+    {
+        return $this->parent;
+    }
+
+    public function setParent(ItemEntity $parent): void
+    {
+        $this->parent = $parent;
     }
 
 }

@@ -5,12 +5,14 @@ namespace ZnBundle\Reference\Domain\Repositories\Eloquent;
 use Illuminate\Support\Collection;
 use Packages\Eav\Domain\Interfaces\Repositories\ValidationRepositoryInterface;
 use ZnBundle\Reference\Domain\Entities\ItemEntity;
+use ZnBundle\Reference\Domain\Interfaces\Repositories\BookRepositoryInterface;
 use ZnBundle\Reference\Domain\Interfaces\Repositories\ItemRepositoryInterface;
 use ZnCore\Domain\Enums\RelationEnum;
 use ZnCore\Domain\Interfaces\Entity\EntityIdInterface;
 use ZnCore\Domain\Libs\Query;
 use ZnCore\Domain\Libs\Relation\OneToMany;
 use ZnCore\Domain\Relations\relations\OneToManyRelation;
+use ZnCore\Domain\Relations\relations\OneToOneRelation;
 use ZnLib\Db\Base\BaseEloquentCrudRepository;
 use ZnLib\Db\Capsule\Manager;
 
@@ -41,6 +43,18 @@ class ItemRepository extends BaseEloquentCrudRepository implements ItemRepositor
                 'relationEntityAttribute' => 'translations',
                 'foreignRepositoryClass' => ItemTranslationRepository::class,
                 'foreignAttribute' => 'item_id',
+            ],
+            [
+                'class' => OneToOneRelation::class,
+                'relationAttribute' => 'book_id',
+                'relationEntityAttribute' => 'book',
+                'foreignRepositoryClass' => BookRepositoryInterface::class,
+            ],
+            [
+                'class' => OneToOneRelation::class,
+                'relationAttribute' => 'parent_id',
+                'relationEntityAttribute' => 'parent',
+                'foreignRepositoryClass' => ItemRepositoryInterface::class,
             ],
         ];
     }
