@@ -5,6 +5,7 @@ namespace ZnBundle\Reference\Domain\Entities;
 use Symfony\Component\Validator\Constraints as Assert;
 use ZnCore\Domain\Interfaces\Entity\ValidateEntityInterface;
 use ZnCore\Domain\Interfaces\Entity\EntityIdInterface;
+use DateTime;
 
 class BookEntity implements ValidateEntityInterface, EntityIdInterface
 {
@@ -13,11 +14,11 @@ class BookEntity implements ValidateEntityInterface, EntityIdInterface
 
     private $title = null;
 
-    private $levels = null;
+    private $levels = 1;
 
     private $entity = null;
 
-    private $props = null;
+    private $props = '{}';
 
     private $status = null;
 
@@ -25,9 +26,29 @@ class BookEntity implements ValidateEntityInterface, EntityIdInterface
 
     private $updatedAt = null;
 
+    public function __construct()
+    {
+        $this->createdAt = new DateTime();
+    }
+
     public function validationRules()
     {
-        return [];
+        return [
+            'title' => [
+                new Assert\NotBlank,
+            ],
+            'levels' => [
+                new Assert\NotBlank,
+                new Assert\Positive(),
+            ],
+
+            'status' => [
+                new Assert\PositiveOrZero(),
+            ],
+            'createdAt' => [
+                new Assert\NotBlank,
+            ],
+        ];
     }
 
     public function setId($value)
@@ -80,12 +101,12 @@ class BookEntity implements ValidateEntityInterface, EntityIdInterface
         return $this->props;
     }
 
-    public function setStatus($value)
+    public function setStatus(int $value)
     {
         $this->status = $value;
     }
 
-    public function getStatus()
+    public function getStatus(): int
     {
         return $this->status;
     }
