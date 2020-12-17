@@ -41,7 +41,9 @@ class BookEntity implements ValidateEntityInterface, EntityIdInterface
                 new Assert\NotBlank,
                 new Assert\Positive(),
             ],
-
+            'entity' => [
+                new Assert\NotBlank,
+            ],
             'status' => [
                 new Assert\PositiveOrZero(),
             ],
