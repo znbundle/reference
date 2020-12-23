@@ -19,7 +19,7 @@ class ItemEntity implements ValidateEntityInterface, EntityIdInterface
     private $title = null;
     private $shortTitle = null;
     private $entity = null;
-    private $status = StatusEnum::ENABLE;
+    private $status = StatusEnum::ENABLED;
     private $sort = 0;
     private $props = null;
     private $createdAt = null;
