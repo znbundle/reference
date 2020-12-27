@@ -20,7 +20,7 @@ class m_2020_02_29_151118_create_item_table extends BaseCreateTableMigration
             $table->string('title')->nullable()->comment('Название');
             $table->string('code')->nullable()->comment('Внутренний код');
             $table->string('entity')->nullable()->comment('Имя сущности');
-            $table->smallInteger('status')->comment('Статус');
+            $table->smallInteger('status_id')->comment('Статус');
             $table->integer('sort')->nullable()->comment('Порядок сортировки');
             $table->string('props')->nullable()->comment('');
             $table->dateTime('created_at')->comment('Время создания');

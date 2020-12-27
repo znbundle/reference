@@ -20,7 +20,7 @@ class BookEntity implements ValidateEntityInterface, EntityIdInterface
 
     private $props = '{}';
 
-    private $status = null;
+    private $statusId = null;
 
     private $createdAt = null;
 
@@ -44,7 +44,7 @@ class BookEntity implements ValidateEntityInterface, EntityIdInterface
             'entity' => [
                 new Assert\NotBlank,
             ],
-            'status' => [
+            'statusId' => [
                 new Assert\PositiveOrZero(),
             ],
             'createdAt' => [
@@ -103,12 +103,12 @@ class BookEntity implements ValidateEntityInterface, EntityIdInterface
         return $this->props;
     }
 
-    public function setStatus(int $value)
+    public function setStatusId(int $value)
     {
         $this->status = $value;
     }
 
-    public function getStatus(): int
+    public function getStatusId(): int
     {
         return $this->status;
     }

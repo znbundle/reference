@@ -19,7 +19,7 @@ class ItemEntity implements ValidateEntityInterface, EntityIdInterface
     private $title = null;
     private $shortTitle = null;
     private $entity = null;
-    private $status = StatusEnum::ENABLED;
+    private $statusId = StatusEnum::ENABLED;
     private $sort = 0;
     private $props = null;
     private $createdAt = null;
@@ -64,7 +64,7 @@ class ItemEntity implements ValidateEntityInterface, EntityIdInterface
                 //new Assert\NotBlank,
                 new Assert\Positive,
             ],
-            'status' => [
+            'statusId' => [
                 new Assert\NotBlank,
                 new Assert\Positive,
             ],
@@ -171,12 +171,12 @@ class ItemEntity implements ValidateEntityInterface, EntityIdInterface
         return $this->entity;
     }
 
-    public function setStatus($value)
+    public function setStatusId($value)
     {
         $this->status = $value;
     }
 
-    public function getStatus()
+    public function getStatusId()
     {
         return $this->status;
     }
