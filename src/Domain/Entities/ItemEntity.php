@@ -173,12 +173,12 @@ class ItemEntity implements ValidateEntityInterface, EntityIdInterface
 
     public function setStatusId($value)
     {
-        $this->status = $value;
+        $this->statusId = $value;
     }
 
     public function getStatusId()
     {
-        return $this->status;
+        return $this->statusId;
     }
 
     public function getSort()
