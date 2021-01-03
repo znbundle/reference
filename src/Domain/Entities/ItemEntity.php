@@ -8,9 +8,16 @@ use ZnCore\Domain\Interfaces\Entity\ValidateEntityInterface;
 use ZnCore\Base\Enums\StatusEnum;
 use Symfony\Component\Validator\Constraints as Assert;
 use DateTime;
+use ZnCore\Domain\Traits\Entity\SoftDeleteEntityTrait;
+use ZnCore\Domain\Traits\Entity\SoftRestoreEntityTrait;
+use ZnCore\Domain\Traits\Entity\StatusReadOnlyEntityTrait;
 
 class ItemEntity implements ValidateEntityInterface, EntityIdInterface
 {
+
+    use StatusReadOnlyEntityTrait;
+    use SoftDeleteEntityTrait;
+    use SoftRestoreEntityTrait;
 
     private $id = null;
     private $bookId = null;
@@ -169,16 +176,6 @@ class ItemEntity implements ValidateEntityInterface, EntityIdInterface
     public function getEntity()
     {
         return $this->entity;
-    }
-
-    public function setStatusId($value)
-    {
-        $this->statusId = $value;
-    }
-
-    public function getStatusId()
-    {
-        return $this->statusId;
     }
 
     public function getSort()

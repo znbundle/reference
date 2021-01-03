@@ -6,9 +6,16 @@ use Symfony\Component\Validator\Constraints as Assert;
 use ZnCore\Domain\Interfaces\Entity\ValidateEntityInterface;
 use ZnCore\Domain\Interfaces\Entity\EntityIdInterface;
 use DateTime;
+use ZnCore\Domain\Traits\Entity\SoftDeleteEntityTrait;
+use ZnCore\Domain\Traits\Entity\SoftRestoreEntityTrait;
+use ZnCore\Domain\Traits\Entity\StatusReadOnlyEntityTrait;
 
 class BookEntity implements ValidateEntityInterface, EntityIdInterface
 {
+
+    use StatusReadOnlyEntityTrait;
+    use SoftDeleteEntityTrait;
+    use SoftRestoreEntityTrait;
 
     private $id = null;
 
@@ -101,16 +108,6 @@ class BookEntity implements ValidateEntityInterface, EntityIdInterface
     public function getProps()
     {
         return $this->props;
-    }
-
-    public function setStatusId(int $value)
-    {
-        $this->status = $value;
-    }
-
-    public function getStatusId(): int
-    {
-        return $this->status;
     }
 
     public function setCreatedAt($value)
