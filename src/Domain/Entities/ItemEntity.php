@@ -3,6 +3,7 @@
 namespace ZnBundle\Reference\Domain\Entities;
 
 use Illuminate\Support\Collection;
+use ZnCore\Base\Helpers\EnumHelper;
 use ZnCore\Domain\Interfaces\Entity\EntityIdInterface;
 use ZnCore\Domain\Interfaces\Entity\ValidateEntityInterface;
 use ZnCore\Base\Enums\StatusEnum;
@@ -72,8 +73,9 @@ class ItemEntity implements ValidateEntityInterface, EntityIdInterface
                 new Assert\Positive,
             ],
             'statusId' => [
-                new Assert\NotBlank,
-                new Assert\Positive,
+                new Assert\Choice([
+                    'choices' => EnumHelper::getValues(StatusEnum::class)
+                ]),
             ],
             'sort' => [
                 //new Assert\NotBlank,

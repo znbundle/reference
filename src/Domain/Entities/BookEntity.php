@@ -3,6 +3,8 @@
 namespace ZnBundle\Reference\Domain\Entities;
 
 use Symfony\Component\Validator\Constraints as Assert;
+use ZnCore\Base\Enums\StatusEnum;
+use ZnCore\Base\Helpers\EnumHelper;
 use ZnCore\Domain\Interfaces\Entity\ValidateEntityInterface;
 use ZnCore\Domain\Interfaces\Entity\EntityIdInterface;
 use DateTime;
@@ -27,7 +29,7 @@ class BookEntity implements ValidateEntityInterface, EntityIdInterface
 
     private $props = '{}';
 
-    private $statusId = null;
+    private $statusId = StatusEnum::ENABLED;
 
     private $createdAt = null;
 
@@ -52,7 +54,9 @@ class BookEntity implements ValidateEntityInterface, EntityIdInterface
                 new Assert\NotBlank,
             ],
             'statusId' => [
-                new Assert\PositiveOrZero(),
+                new Assert\Choice([
+                    'choices' => EnumHelper::getValues(StatusEnum::class)
+                ]),
             ],
             'createdAt' => [
                 new Assert\NotBlank,
