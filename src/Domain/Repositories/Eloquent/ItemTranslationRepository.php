@@ -4,6 +4,8 @@ namespace ZnBundle\Reference\Domain\Repositories\Eloquent;
 
 use ZnBundle\Reference\Domain\Entities\ItemTranslationEntity;
 use ZnBundle\Reference\Domain\Interfaces\Repositories\ItemTranslationRepositoryInterface;
+use ZnCore\Base\Libs\I18Next\Facades\I18Next;
+use ZnCore\Base\Libs\I18Next\Interfaces\Services\TranslationServiceInterface;
 use ZnCore\Base\Libs\I18Next\Services\TranslationService;
 use ZnCore\Domain\Entities\Query\Where;
 use ZnCore\Domain\Interfaces\Libs\EntityManagerInterface;
@@ -22,10 +24,10 @@ class ItemTranslationRepository extends BaseEloquentCrudRepository implements It
         return ItemTranslationEntity::class;
     }
 
-    public function __construct(EntityManagerInterface $em, Manager $capsule, TranslationService $translationService)
+    public function __construct(EntityManagerInterface $em, Manager $capsule/*, TranslationService $translationService*/)
     {
         parent::__construct($em, $capsule);
-        $this->translationService = $translationService;
+        $this->translationService = I18Next::getService();
     }
 
     protected function forgeQuery(Query $query = null)

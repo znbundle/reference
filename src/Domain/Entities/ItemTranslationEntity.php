@@ -3,10 +3,11 @@
 namespace ZnBundle\Reference\Domain\Entities;
 
 use Symfony\Component\Validator\Constraints as Assert;
-use ZnCore\Domain\Interfaces\Entity\ValidateEntityInterface;
+use Symfony\Component\Validator\Mapping\ClassMetadata;
+use ZnCore\Domain\Interfaces\Entity\ValidateEntityByMetadataInterface;
 use ZnCore\Domain\Interfaces\Entity\EntityIdInterface;
 
-class ItemTranslationEntity implements ValidateEntityInterface, EntityIdInterface
+class ItemTranslationEntity implements ValidateEntityByMetadataInterface, EntityIdInterface
 {
 
     private $id = null;
@@ -19,9 +20,9 @@ class ItemTranslationEntity implements ValidateEntityInterface, EntityIdInterfac
 
     private $shortTitle = null;
 
-    public function validationRules()
+    public static function loadValidatorMetadata(ClassMetadata $metadata)
     {
-        return [];
+
     }
 
     public function setId($value)

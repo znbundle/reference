@@ -7,6 +7,7 @@ use Packages\Eav\Domain\Interfaces\Repositories\ValidationRepositoryInterface;
 use ZnBundle\Reference\Domain\Entities\ItemEntity;
 use ZnBundle\Reference\Domain\Interfaces\Repositories\BookRepositoryInterface;
 use ZnBundle\Reference\Domain\Interfaces\Repositories\ItemRepositoryInterface;
+use ZnBundle\Reference\Domain\Interfaces\Repositories\ItemTranslationRepositoryInterface;
 use ZnCore\Domain\Enums\RelationEnum;
 use ZnCore\Domain\Interfaces\Entity\EntityIdInterface;
 use ZnCore\Domain\Libs\Query;
@@ -41,7 +42,7 @@ class ItemRepository extends BaseEloquentCrudRepository implements ItemRepositor
                 'class' => OneToManyRelation::class,
                 'relationAttribute' => 'id',
                 'relationEntityAttribute' => 'translations',
-                'foreignRepositoryClass' => ItemTranslationRepository::class,
+                'foreignRepositoryClass' => ItemTranslationRepositoryInterface::class,
                 'foreignAttribute' => 'item_id',
             ],
             [

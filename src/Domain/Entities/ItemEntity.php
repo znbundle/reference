@@ -3,9 +3,10 @@
 namespace ZnBundle\Reference\Domain\Entities;
 
 use Illuminate\Support\Collection;
+use Symfony\Component\Validator\Mapping\ClassMetadata;
 use ZnCore\Base\Helpers\EnumHelper;
 use ZnCore\Domain\Interfaces\Entity\EntityIdInterface;
-use ZnCore\Domain\Interfaces\Entity\ValidateEntityInterface;
+use ZnCore\Domain\Interfaces\Entity\ValidateEntityByMetadataInterface;
 use ZnCore\Base\Enums\StatusEnum;
 use Symfony\Component\Validator\Constraints as Assert;
 use DateTime;
@@ -13,7 +14,7 @@ use ZnCore\Domain\Traits\Entity\SoftDeleteEntityTrait;
 use ZnCore\Domain\Traits\Entity\SoftRestoreEntityTrait;
 use ZnCore\Domain\Traits\Entity\StatusReadOnlyEntityTrait;
 
-class ItemEntity implements ValidateEntityInterface, EntityIdInterface
+class ItemEntity implements ValidateEntityByMetadataInterface, EntityIdInterface
 {
 
     use StatusReadOnlyEntityTrait;
@@ -43,61 +44,17 @@ class ItemEntity implements ValidateEntityInterface, EntityIdInterface
         $this->createdAt = new DateTime();
     }
 
-    public function validationRules()
+    public static function loadValidatorMetadata(ClassMetadata $metadata)
     {
-        return [
-            /* = null;
-     = null;
-     = null;
-     = null;
-     = null;
-     = null;
-     = null;
-     = null;
-     = null;
-    $props = null;
-    $createdAt = null;
-    $updatedAt = null;*/
-
-
-            'id' => [
-                //new Assert\NotBlank,
-                new Assert\Positive,
-            ],
-            'bookId' => [
-                new Assert\NotBlank,
-                new Assert\Positive,
-            ],
-            'parentId' => [
-                //new Assert\NotBlank,
-                new Assert\Positive,
-            ],
-            'statusId' => [
-                new Assert\Choice([
-                    'choices' => EnumHelper::getValues(StatusEnum::class)
-                ]),
-            ],
-            'sort' => [
-                //new Assert\NotBlank,
-                new Assert\Positive,
-            ],
-            /*'code' => [
-                new Assert\NotBlank,
-            ],*/
-            'title' => [
-                new Assert\NotBlank,
-            ],
-            /*'created_at' => [
-                new Assert\DateTime,
-            ],*/
-            /*'shortTitle' => [
-                new Assert\NotBlank,
-            ],
-            'entity' => [
-                new Assert\NotBlank,
-            ],*/
-
-        ];
+        $metadata->addPropertyConstraint('id', new Assert\Positive);
+        $metadata->addPropertyConstraint('bookId', new Assert\NotBlank);
+        $metadata->addPropertyConstraint('bookId', new Assert\Positive);
+        $metadata->addPropertyConstraint('parentId', new Assert\Positive);
+        $metadata->addPropertyConstraint('statusId', new Assert\Choice([
+            'choices' => EnumHelper::getValues(StatusEnum::class)
+        ]));
+        $metadata->addPropertyConstraint('sort', new Assert\Positive);
+        $metadata->addPropertyConstraint('title', new Assert\NotBlank);
     }
 
     public function setId($value)

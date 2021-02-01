@@ -3,16 +3,17 @@
 namespace ZnBundle\Reference\Domain\Entities;
 
 use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Component\Validator\Mapping\ClassMetadata;
 use ZnCore\Base\Enums\StatusEnum;
 use ZnCore\Base\Helpers\EnumHelper;
-use ZnCore\Domain\Interfaces\Entity\ValidateEntityInterface;
+use ZnCore\Domain\Interfaces\Entity\ValidateEntityByMetadataInterface;
 use ZnCore\Domain\Interfaces\Entity\EntityIdInterface;
 use DateTime;
 use ZnCore\Domain\Traits\Entity\SoftDeleteEntityTrait;
 use ZnCore\Domain\Traits\Entity\SoftRestoreEntityTrait;
 use ZnCore\Domain\Traits\Entity\StatusReadOnlyEntityTrait;
 
-class BookEntity implements ValidateEntityInterface, EntityIdInterface
+class BookEntity implements ValidateEntityByMetadataInterface, EntityIdInterface
 {
 
     use StatusReadOnlyEntityTrait;
@@ -40,28 +41,16 @@ class BookEntity implements ValidateEntityInterface, EntityIdInterface
         $this->createdAt = new DateTime();
     }
 
-    public function validationRules()
+    public static function loadValidatorMetadata(ClassMetadata $metadata)
     {
-        return [
-            'title' => [
-                new Assert\NotBlank,
-            ],
-            'levels' => [
-                new Assert\NotBlank,
-                new Assert\Positive(),
-            ],
-            'entity' => [
-                new Assert\NotBlank,
-            ],
-            'statusId' => [
-                new Assert\Choice([
-                    'choices' => EnumHelper::getValues(StatusEnum::class)
-                ]),
-            ],
-            'createdAt' => [
-                new Assert\NotBlank,
-            ],
-        ];
+        $metadata->addPropertyConstraint('title', new Assert\NotBlank);
+        $metadata->addPropertyConstraint('levels', new Assert\NotBlank);
+        $metadata->addPropertyConstraint('levels', new Assert\Positive());
+        $metadata->addPropertyConstraint('entity', new Assert\NotBlank);
+        $metadata->addPropertyConstraint('statusId', new Assert\Choice([
+            'choices' => EnumHelper::getValues(StatusEnum::class)
+        ]));
+        $metadata->addPropertyConstraint('createdAt', new Assert\NotBlank);
     }
 
     public function setId($value)
