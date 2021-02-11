@@ -16,6 +16,6 @@ class BookService extends BaseCrudService implements BookServiceInterface
 
     public function __construct(BookRepositoryInterface $repository)
     {
-        $this->repository = $repository;
+        $this->setRepository($repository);
     }
 }

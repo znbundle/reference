@@ -11,7 +11,7 @@ class ItemTranslationService extends BaseCrudService implements ItemTranslationS
 
     public function __construct(ItemTranslationRepositoryInterface $repository)
     {
-        $this->repository = $repository;
+        $this->setRepository($repository);
     }
 
 
