@@ -19,6 +19,7 @@ use ZnLib\Web\Widgets\BreadcrumbWidget;
 use ZnYii\Web\Actions\CreateAction;
 use ZnYii\Web\Actions\DeleteAction;
 use ZnYii\Web\Actions\IndexAction;
+use ZnYii\Web\Actions\RestoreAction;
 use ZnYii\Web\Actions\UpdateAction;
 use ZnYii\Web\Actions\ViewAction;
 use ZnYii\Web\Controllers\BaseController;
@@ -108,7 +109,12 @@ class ItemController extends BaseController
     public function actions()
     {
         return [
-            'restore' => $this->getRestoreActionConfig(),
+            'restore' => [
+                'class' => RestoreAction::class,
+                'service' => $this->service,
+                'successMessage' => ['web', 'message.restore_success'],
+                'successRedirectUrl' => [$this->baseUri, 'filter[book_id]' => $this->getBookId()],
+            ],
             'index' => [
                 'class' => IndexAction::class,
                 'service' => $this->service,

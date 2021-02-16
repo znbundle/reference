@@ -55,6 +55,7 @@ $attributes = [
     [
         'formatter' => [
             'class' => ActionFormatter::class,
+            'restorable' => true,
             'actions' => [
                 'itemList',
                 'update',
@@ -79,6 +80,14 @@ $attributes = [
                 ],
                 'delete' => [
                     'class' => DeleteAction::class,
+                    'linkParams' => [
+                        'filter[book_id]' => 'book_id',
+                        'id' => 'id',
+                    ],
+                    'baseUrl' => '/reference/item',
+                ],
+                'restore' => [
+                    'class' => \ZnLib\Web\Widgets\Format\Formatters\Actions\RestoreAction::class,
                     'linkParams' => [
                         'filter[book_id]' => 'book_id',
                         'id' => 'id',

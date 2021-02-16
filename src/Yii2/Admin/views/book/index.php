@@ -60,6 +60,7 @@ $attributes = [
     [
         'formatter' => [
             'class' => ActionFormatter::class,
+            'restorable' => true,
             'actions' => [
                 'itemList',
                 'update',
