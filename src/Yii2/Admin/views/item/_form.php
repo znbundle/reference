@@ -6,15 +6,15 @@
  * @var ItemForm $model
  */
 
-use ZnBundle\Reference\Yii2\Admin\Forms\ItemForm;
 use yii\helpers\Html;
 use yii\web\Request;
 use yii\web\View;
 use yii\widgets\ActiveForm;
-use ZnCore\Base\Enums\StatusEnum;
-use ZnCore\Base\Helpers\EnumHelper;
+use ZnBundle\Reference\Yii2\Admin\Forms\ItemForm;
 use ZnCore\Base\Libs\I18Next\Facades\I18Next;
 use ZnYii\Web\Widgets\CancelButton\CancelButtonWidget;
+
+$bookId = $request->getQueryParam('filter')['book_id'];
 
 ?>
 
@@ -24,7 +24,7 @@ use ZnYii\Web\Widgets\CancelButton\CancelButtonWidget;
 
         <?php $form = ActiveForm::begin(['id' => 'itemform']) ?>
 
-        <?= Html::activeHiddenInput($model, 'book_id', ['value' => $request->getQueryParam('book_id')]); ?>
+        <?= Html::activeHiddenInput($model, 'book_id', ['value' => $bookId]); ?>
 
         <div class="form-row">
             <div class="form-group col-md-12">
@@ -47,14 +47,6 @@ use ZnYii\Web\Widgets\CancelButton\CancelButtonWidget;
                 <?= Html::activeLabel($model, 'sort'); ?>
                 <?= Html::activeTextInput($model, 'sort', ['type' => 'number', 'class' => 'form-control']); ?>
                 <?= Html::error($model, 'sort', ['class' => 'text-danger']); ?>
-            </div>
-        </div>
-
-        <div class="form-row">
-            <div class="form-group col-md-12">
-                <?= Html::activeLabel($model, 'status'); ?>
-                <?= Html::activeDropDownList($model, 'status', EnumHelper::getLabels(StatusEnum::class), ['class' => 'form-control']); ?>
-                <?= Html::error($model, 'status', ['class' => 'text-danger']); ?>
             </div>
         </div>
 
