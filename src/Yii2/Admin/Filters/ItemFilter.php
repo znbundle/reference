@@ -2,7 +2,7 @@
 
 namespace ZnBundle\Reference\Yii2\Admin\Filters;
 
-use Packages\Utility\Domain\Filters\BaseStatusFilter;
+use ZnSandbox\Sandbox\Status\Domain\Filters\BaseStatusFilter;
 use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Component\Validator\Mapping\ClassMetadata;
 
