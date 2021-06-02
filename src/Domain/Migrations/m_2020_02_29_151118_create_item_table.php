@@ -25,6 +25,8 @@ class m_2020_02_29_151118_create_item_table extends BaseCreateTableMigration
             $table->string('props')->nullable()->comment('');
             $table->dateTime('created_at')->comment('Время создания');
             $table->dateTime('updated_at')->nullable()->comment('Время обновления');
+
+            $this->addForeign($table, 'book_id', 'reference_book');
         };
     }
 
