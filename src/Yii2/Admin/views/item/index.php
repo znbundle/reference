@@ -7,12 +7,10 @@
  * @var ValidateEntityByMetadataInterface $filterModel
  */
 
-use ZnBundle\Reference\Yii2\Admin\Formatters\Actions\ItemListAction;
-use ZnSandbox\Sandbox\Status\Domain\Enums\StatusEnum;
-use ZnSandbox\Sandbox\Status\Web\Widgets\FilterWidget;
 use yii\helpers\Url;
 use yii\web\Request;
 use yii\web\View;
+use ZnBundle\Reference\Yii2\Admin\Formatters\Actions\ItemListAction;
 use ZnCore\Base\Legacy\Yii\Helpers\ArrayHelper;
 use ZnCore\Base\Libs\I18Next\Facades\I18Next;
 use ZnCore\Domain\Interfaces\Entity\ValidateEntityByMetadataInterface;
@@ -23,6 +21,8 @@ use ZnLib\Web\Widgets\Format\Formatters\Actions\DeleteAction;
 use ZnLib\Web\Widgets\Format\Formatters\Actions\UpdateAction;
 use ZnLib\Web\Widgets\Format\Formatters\EnumFormatter;
 use ZnLib\Web\Widgets\Format\Formatters\LinkFormatter;
+use ZnSandbox\Sandbox\Status\Domain\Enums\StatusEnum;
+use ZnSandbox\Sandbox\Status\Web\Widgets\FilterWidget;
 
 $this->title = I18Next::t('reference', 'item.list');
 
@@ -41,7 +41,10 @@ $attributes = [
         'sort' => true,
         'formatter' => [
             'class' => LinkFormatter::class,
-            'uri' => '/reference/book/view',
+            'uri' => [
+                '/reference/item/view',
+                'filter[book_id]' => $bookId
+            ],
         ],
     ],
     [
