@@ -47,7 +47,7 @@ class ReferenceItemValidator extends ConstraintValidator
             $itemEntity = $itemRepository->oneById($value, $query);
             if($itemEntity->getBook()->getEntity() != $constraint->bookName) {
                 $this->context->buildViolation($constraint->message)
-                    ->setParameter('{{ string }}', $value)
+                    ->setParameter('{{ value }}', $value)
                     ->setParameter('{{ bookName }}', $constraint->bookName)
                     ->addViolation();
             }
@@ -55,7 +55,7 @@ class ReferenceItemValidator extends ConstraintValidator
             $iinEntity = IinParser::parse($value);*/
         } catch (NotFoundException $e) {
             $this->context->buildViolation($constraint->notFoundMessage)
-                ->setParameter('{{ string }}', $value)
+                ->setParameter('{{ value }}', $value)
                 ->addViolation();
         } catch (Exception $e) {
             if($constraint->message) {
@@ -64,7 +64,7 @@ class ReferenceItemValidator extends ConstraintValidator
                 $message = $e->getMessage();
             }
             $this->context->buildViolation($message)
-                ->setParameter('{{ string }}', $value)
+                ->setParameter('{{ value }}', $value)
                 ->addViolation();
         }
     }

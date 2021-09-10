@@ -5,6 +5,7 @@ namespace ZnBundle\Reference\Domain\Entities;
 use Illuminate\Support\Collection;
 use Symfony\Component\Validator\Mapping\ClassMetadata;
 use ZnCore\Base\Helpers\EnumHelper;
+use ZnCore\Domain\Constraints\Enum;
 use ZnCore\Domain\Interfaces\Entity\EntityIdInterface;
 use ZnCore\Domain\Interfaces\Entity\ValidateEntityByMetadataInterface;
 use ZnCore\Base\Enums\StatusEnum;
@@ -50,8 +51,8 @@ class ItemEntity implements ValidateEntityByMetadataInterface, EntityIdInterface
         $metadata->addPropertyConstraint('bookId', new Assert\NotBlank);
         $metadata->addPropertyConstraint('bookId', new Assert\Positive);
         $metadata->addPropertyConstraint('parentId', new Assert\Positive);
-        $metadata->addPropertyConstraint('statusId', new Assert\Choice([
-            'choices' => EnumHelper::getValues(StatusEnum::class)
+        $metadata->addPropertyConstraint('statusId', new Enum([
+            'class' => StatusEnum::class,
         ]));
         $metadata->addPropertyConstraint('sort', new Assert\Positive);
         $metadata->addPropertyConstraint('title', new Assert\NotBlank);

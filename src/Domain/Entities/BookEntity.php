@@ -6,6 +6,7 @@ use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Component\Validator\Mapping\ClassMetadata;
 use ZnCore\Base\Enums\StatusEnum;
 use ZnCore\Base\Helpers\EnumHelper;
+use ZnCore\Domain\Constraints\Enum;
 use ZnCore\Domain\Interfaces\Entity\ValidateEntityByMetadataInterface;
 use ZnCore\Domain\Interfaces\Entity\EntityIdInterface;
 use DateTime;
@@ -47,8 +48,8 @@ class BookEntity implements ValidateEntityByMetadataInterface, EntityIdInterface
         $metadata->addPropertyConstraint('levels', new Assert\NotBlank);
         $metadata->addPropertyConstraint('levels', new Assert\Positive());
         $metadata->addPropertyConstraint('entity', new Assert\NotBlank);
-        $metadata->addPropertyConstraint('statusId', new Assert\Choice([
-            'choices' => EnumHelper::getValues(StatusEnum::class)
+        $metadata->addPropertyConstraint('statusId', new Enum([
+            'class' => StatusEnum::class,
         ]));
         $metadata->addPropertyConstraint('createdAt', new Assert\NotBlank);
     }
