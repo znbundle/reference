@@ -3,10 +3,15 @@
 namespace ZnBundle\Reference\Domain\Enums\Rbac;
 
 use ZnCore\Base\Interfaces\GetLabelsInterface;
+use ZnCore\Contract\Rbac\Interfaces\GetRbacInheritanceInterface;
+use ZnCore\Contract\Rbac\Traits\CrudRbacInheritanceTrait;
 
-class ReferenceBookPermissionEnum implements GetLabelsInterface
+class ReferenceBookPermissionEnum implements GetLabelsInterface, GetRbacInheritanceInterface
 {
 
+    use CrudRbacInheritanceTrait;
+
+    const CRUD = 'oReferenceBookCrud';
     const ALL = 'oReferenceBookAll';
     const ONE = 'oReferenceBookOne';
     const CREATE = 'oReferenceBookCreate';
@@ -17,6 +22,7 @@ class ReferenceBookPermissionEnum implements GetLabelsInterface
     public static function getLabels()
     {
         return [
+            self::CRUD => 'Справочник. Полный доступ',
             self::ALL => 'Справочник. Просмотр списка',
             self::ONE => 'Справочник. Просмотр записи',
             self::CREATE => 'Справочник. Создание',

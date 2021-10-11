@@ -3,10 +3,15 @@
 namespace ZnBundle\Reference\Domain\Enums\Rbac;
 
 use ZnCore\Base\Interfaces\GetLabelsInterface;
+use ZnCore\Contract\Rbac\Interfaces\GetRbacInheritanceInterface;
+use ZnCore\Contract\Rbac\Traits\CrudRbacInheritanceTrait;
 
-class ReferenceItemPermissionEnum implements GetLabelsInterface
+class ReferenceItemPermissionEnum implements GetLabelsInterface, GetRbacInheritanceInterface
 {
 
+    use CrudRbacInheritanceTrait;
+
+    const CRUD = 'oReferenceItemCrud';
     const ALL = 'oReferenceItemAll';
     const ONE = 'oReferenceItemOne';
     const CREATE = 'oReferenceItemCreate';
@@ -17,6 +22,7 @@ class ReferenceItemPermissionEnum implements GetLabelsInterface
     public static function getLabels()
     {
         return [
+            self::CRUD => 'Значения справочника. Полный доступ',
             self::ALL => 'Значения справочника. Просмотр списка',
             self::ONE => 'Значения справочника. Просмотр записи',
             self::CREATE => 'Значения справочника. Создание',
