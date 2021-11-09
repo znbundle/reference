@@ -3,18 +3,51 @@
 namespace ZnBundle\Reference\Domain\Repositories\Eloquent;
 
 use ZnBundle\Reference\Domain\Interfaces\Repositories\ItemRepositoryInterface;
+use ZnBundle\Reference\Domain\Interfaces\Services\BookServiceInterface;
 use ZnCore\Domain\Entities\Query\Where;
+use ZnCore\Domain\Interfaces\Libs\EntityManagerInterface;
 use ZnCore\Domain\Libs\Query;
+use ZnLib\Db\Capsule\Manager;
 
 abstract class BaseItemRepository extends ItemRepository implements ItemRepositoryInterface
 {
 
-    abstract public function getBookId(): int;
+    protected $bookId;
+    protected $bookName;
+    private $bookService;
+
+    public function __construct(EntityManagerInterface $em, Manager $manager, BookServiceInterface $bookService)
+    {
+        parent::__construct($em, $manager);
+        $this->bookService = $bookService;
+    }
+
+    public function getBookId(): int
+    {
+        return $this->bookId;
+    }
+
+    public function getBookName(): string
+    {
+        return $this->bookName;
+    }
+
+    /*protected function forgeQuery(Query $query = null)
+    {
+        $query = parent::forgeQuery($query);
+        $query->whereNew(new Where('book_id', $this->getBookId()));
+        return $query;
+    }*/
 
     protected function forgeQuery(Query $query = null)
     {
         $query = parent::forgeQuery($query);
-        $query->whereNew(new Where('book_id', $this->getBookId()));
+        if ($this->bookId) {
+            $query->whereNew(new Where('book_id', $this->getBookId()));
+        } elseif ($this->bookName) {
+            $bookEntity = $this->bookService->oneByName($this->getBookName());
+            $query->whereNew(new Where('book_id', $bookEntity->getId()));
+        }
         return $query;
     }
 }
