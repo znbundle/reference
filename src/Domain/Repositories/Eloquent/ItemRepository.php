@@ -16,6 +16,7 @@ use ZnCore\Domain\Relations\relations\OneToManyRelation;
 use ZnCore\Domain\Relations\relations\OneToOneRelation;
 use ZnLib\Db\Base\BaseEloquentCrudRepository;
 use ZnLib\Db\Capsule\Manager;
+use ZnLib\Db\Mappers\JsonMapper;
 
 class ItemRepository extends BaseEloquentCrudRepository implements ItemRepositoryInterface
 {
@@ -28,23 +29,30 @@ class ItemRepository extends BaseEloquentCrudRepository implements ItemRepositor
         return ItemEntity::class;
     }
 
-    protected function forgeQuery(Query $query = null)
+    public function mappers(): array
+    {
+        return [
+            new JsonMapper(['title_i18n']),
+        ];
+    }
+
+    /*protected function forgeQuery(Query $query = null)
     {
         $query = parent::forgeQuery($query);
         $query->with(['translations']);
         return $query;
-    }
+    }*/
 
     public function relations2()
     {
         return [
-            [
+            /*[
                 'class' => OneToManyRelation::class,
                 'relationAttribute' => 'id',
                 'relationEntityAttribute' => 'translations',
                 'foreignRepositoryClass' => ItemTranslationRepositoryInterface::class,
                 'foreignAttribute' => 'item_id',
-            ],
+            ],*/
             [
                 'class' => OneToOneRelation::class,
                 'relationAttribute' => 'book_id',

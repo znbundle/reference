@@ -5,6 +5,7 @@ namespace ZnBundle\Reference\Domain\Entities;
 use Illuminate\Support\Collection;
 use Symfony\Component\Validator\Mapping\ClassMetadata;
 use ZnCore\Base\Helpers\EnumHelper;
+use ZnCore\Base\Libs\I18Next\Traits\I18nTrait;
 use ZnCore\Domain\Constraints\Enum;
 use ZnCore\Domain\Interfaces\Entity\EntityIdInterface;
 use ZnCore\Domain\Interfaces\Entity\ValidateEntityByMetadataInterface;
@@ -21,12 +22,14 @@ class ItemEntity implements ValidateEntityByMetadataInterface, EntityIdInterface
     use StatusReadOnlyEntityTrait;
     use SoftDeleteEntityTrait;
     use SoftRestoreEntityTrait;
+    use I18nTrait;
 
     private $id = null;
     private $bookId = null;
     private $parentId = null;
     private $code = null;
     private $title = null;
+    private $titleI18n = null;
     private $shortTitle = null;
     private $entity = null;
     private $statusId = StatusEnum::ENABLED;
@@ -56,6 +59,7 @@ class ItemEntity implements ValidateEntityByMetadataInterface, EntityIdInterface
         ]));
         $metadata->addPropertyConstraint('sort', new Assert\Positive);
         $metadata->addPropertyConstraint('title', new Assert\NotBlank);
+        $metadata->addPropertyConstraint('titleI18n', new Assert\NotBlank);
     }
 
     public function setId($value)
@@ -98,19 +102,24 @@ class ItemEntity implements ValidateEntityByMetadataInterface, EntityIdInterface
         return $this->code;
     }
 
-    public function getTitle()
+    public function setTitle($value): void
     {
-        if (empty($this->title) && !empty($this->translations) && $this->translations->count()) {
-            /** @var ItemTranslationEntity $translationEntity */
-            $translationEntity = $this->translations->first();
-            $this->title = $translationEntity->getTitle();
-        }
-        return $this->title;
+        $this->_setI18n('title', $value);
     }
 
-    public function setTitle($title): void
+    public function getTitle()
     {
-        $this->title = $title;
+        return $this->_getI18n('title');
+    }
+
+    public function getTitleI18n()
+    {
+        return $this->_getI18nArray('title');
+    }
+
+    public function setTitleI18n($titleI18n): void
+    {
+        $this->titleI18n = $titleI18n;
     }
 
     public function getShortTitle()

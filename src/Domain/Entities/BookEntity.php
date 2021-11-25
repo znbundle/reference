@@ -6,6 +6,7 @@ use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Component\Validator\Mapping\ClassMetadata;
 use ZnCore\Base\Enums\StatusEnum;
 use ZnCore\Base\Helpers\EnumHelper;
+use ZnCore\Base\Libs\I18Next\Traits\I18nTrait;
 use ZnCore\Domain\Constraints\Enum;
 use ZnCore\Domain\Interfaces\Entity\ValidateEntityByMetadataInterface;
 use ZnCore\Domain\Interfaces\Entity\EntityIdInterface;
@@ -20,10 +21,13 @@ class BookEntity implements ValidateEntityByMetadataInterface, EntityIdInterface
     use StatusReadOnlyEntityTrait;
     use SoftDeleteEntityTrait;
     use SoftRestoreEntityTrait;
+    use I18nTrait;
 
     private $id = null;
 
     private $title = null;
+
+    private $titleI18n = null;
 
     private $levels = 1;
 
@@ -45,6 +49,7 @@ class BookEntity implements ValidateEntityByMetadataInterface, EntityIdInterface
     public static function loadValidatorMetadata(ClassMetadata $metadata)
     {
         $metadata->addPropertyConstraint('title', new Assert\NotBlank);
+        $metadata->addPropertyConstraint('titleI18n', new Assert\NotBlank);
         $metadata->addPropertyConstraint('levels', new Assert\NotBlank);
         $metadata->addPropertyConstraint('levels', new Assert\Positive());
         $metadata->addPropertyConstraint('entity', new Assert\NotBlank);
@@ -64,14 +69,24 @@ class BookEntity implements ValidateEntityByMetadataInterface, EntityIdInterface
         return $this->id;
     }
 
-    public function setTitle($value)
+    public function setTitle($value): void
     {
-        $this->title = $value;
+        $this->_setI18n('title', $value);
     }
 
     public function getTitle()
     {
-        return $this->title;
+        return $this->_getI18n('title');
+    }
+
+    public function getTitleI18n()
+    {
+        return $this->_getI18nArray('title');
+    }
+
+    public function setTitleI18n($titleI18n): void
+    {
+        $this->titleI18n = $titleI18n;
     }
 
     public function setLevels($value)
