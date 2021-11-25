@@ -4,6 +4,7 @@ namespace ZnBundle\Reference\Domain\Entities;
 
 use Illuminate\Support\Collection;
 use Symfony\Component\Validator\Mapping\ClassMetadata;
+use ZnBundle\Language\Domain\Interfaces\Services\RuntimeLanguageServiceInterface;
 use ZnCore\Base\Helpers\EnumHelper;
 use ZnCore\Base\Libs\I18Next\Traits\I18nTrait;
 use ZnCore\Domain\Constraints\Enum;
@@ -40,12 +41,13 @@ class ItemEntity implements ValidateEntityByMetadataInterface, EntityIdInterface
     private $book;
     private $parent;
 
-    /** @var Collection | ItemTranslationEntity[] */
-    private $translations = null;
+    /* @var Collection | ItemTranslationEntity[] */
+//    private $translations = null;
 
-    public function __construct()
+    public function __construct(RuntimeLanguageServiceInterface $languageService)
     {
         $this->createdAt = new DateTime();
+        $this->_setRuntimeLanguageService($languageService);
     }
 
     public static function loadValidatorMetadata(ClassMetadata $metadata)
@@ -187,7 +189,7 @@ class ItemEntity implements ValidateEntityByMetadataInterface, EntityIdInterface
         return $this->updatedAt;
     }
 
-    public function getTranslations(): ?Collection
+    /*public function getTranslations(): ?Collection
     {
         return $this->translations;
     }
@@ -195,7 +197,7 @@ class ItemEntity implements ValidateEntityByMetadataInterface, EntityIdInterface
     public function setTranslations(Collection $translations = null): void
     {
         $this->translations = $translations;
-    }
+    }*/
 
     public function getBook(): ?BookEntity
     {

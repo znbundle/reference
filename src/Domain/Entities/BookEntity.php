@@ -4,6 +4,7 @@ namespace ZnBundle\Reference\Domain\Entities;
 
 use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Component\Validator\Mapping\ClassMetadata;
+use ZnBundle\Language\Domain\Interfaces\Services\RuntimeLanguageServiceInterface;
 use ZnCore\Base\Enums\StatusEnum;
 use ZnCore\Base\Helpers\EnumHelper;
 use ZnCore\Base\Libs\I18Next\Traits\I18nTrait;
@@ -41,9 +42,10 @@ class BookEntity implements ValidateEntityByMetadataInterface, EntityIdInterface
 
     private $updatedAt = null;
 
-    public function __construct()
+    public function __construct(RuntimeLanguageServiceInterface $languageService)
     {
         $this->createdAt = new DateTime();
+        $this->_setRuntimeLanguageService($languageService);
     }
 
     public static function loadValidatorMetadata(ClassMetadata $metadata)
