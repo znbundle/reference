@@ -32,7 +32,7 @@ class ItemRepository extends BaseEloquentCrudRepository implements ItemRepositor
     public function mappers(): array
     {
         return [
-            new JsonMapper(['title_i18n']),
+            new JsonMapper(['title_i18n', 'props']),
         ];
     }
 
