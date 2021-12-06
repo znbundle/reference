@@ -40,6 +40,7 @@ class ItemEntity implements ValidateEntityByMetadataInterface, EntityIdInterface
     private $updatedAt = null;
     private $book;
     private $parent;
+    private $children;
 
     /* @var Collection | ItemTranslationEntity[] */
 //    private $translations = null;
@@ -219,5 +220,13 @@ class ItemEntity implements ValidateEntityByMetadataInterface, EntityIdInterface
         $this->parent = $parent;
     }
 
-}
+    public function getChildren(): ?Collection
+    {
+        return $this->children;
+    }
 
+    public function setChildren(?Collection $children): void
+    {
+        $this->children = $children;
+    }
+}

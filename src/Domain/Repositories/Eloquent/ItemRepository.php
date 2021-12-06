@@ -65,6 +65,13 @@ class ItemRepository extends BaseEloquentCrudRepository implements ItemRepositor
                 'relationEntityAttribute' => 'parent',
                 'foreignRepositoryClass' => ItemRepositoryInterface::class,
             ],
+            [
+                'class' => OneToManyRelation::class,
+                'relationAttribute' => 'id',
+                'relationEntityAttribute' => 'children',
+                'foreignRepositoryClass' => ItemRepositoryInterface::class,
+                'foreignAttribute' => 'parent_id',
+            ],
         ];
     }
 }
