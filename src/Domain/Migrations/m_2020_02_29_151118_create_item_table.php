@@ -29,5 +29,4 @@ class m_2020_02_29_151118_create_item_table extends BaseCreateTableMigration
             $this->addForeign($table, 'book_id', 'reference_book');
         };
     }
-
 }
