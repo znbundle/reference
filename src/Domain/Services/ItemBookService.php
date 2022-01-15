@@ -6,6 +6,7 @@ use ZnBundle\Reference\Domain\Interfaces\Repositories\ItemRepositoryInterface;
 use ZnBundle\Reference\Domain\Interfaces\Services\BookServiceInterface;
 use ZnBundle\Reference\Domain\Interfaces\Services\ItemBookServiceInterface;
 use ZnBundle\Reference\Domain\Interfaces\Services\ItemServiceInterface;
+use ZnCore\Base\Enums\StatusEnum;
 use ZnCore\Domain\Entities\Query\Where;
 use ZnCore\Domain\Interfaces\Libs\EntityManagerInterface;
 use ZnCore\Domain\Libs\Query;
@@ -46,6 +47,8 @@ class ItemBookService extends ItemService implements ItemBookServiceInterface
     protected function forgeQuery(Query $query = null)
     {
         $query = parent::forgeQuery($query);
+        $query->where('status_id', StatusEnum::ENABLED);
+        $query->orderBy(['sort' => SORT_ASC]);
         if($this->bookId) {
             $query->whereNew(new Where('book_id', $this->getBookId()));
         } elseif($this->bookName) {
