@@ -60,7 +60,7 @@ class ItemEntity implements ValidateEntityByMetadataInterface, EntityIdInterface
         $metadata->addPropertyConstraint('statusId', new Enum([
             'class' => StatusEnum::class,
         ]));
-        $metadata->addPropertyConstraint('sort', new Assert\Positive);
+        $metadata->addPropertyConstraint('sort', new Assert\PositiveOrZero());
         $metadata->addPropertyConstraint('title', new Assert\NotBlank);
         $metadata->addPropertyConstraint('titleI18n', new Assert\NotBlank);
     }
@@ -122,7 +122,8 @@ class ItemEntity implements ValidateEntityByMetadataInterface, EntityIdInterface
 
     public function setTitleI18n($titleI18n): void
     {
-        $this->titleI18n = $titleI18n;
+        $this->_setI18nArray('title', $titleI18n);
+//        $this->titleI18n = $titleI18n;
     }
 
     public function getShortTitle()
