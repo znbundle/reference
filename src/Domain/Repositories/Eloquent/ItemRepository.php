@@ -15,7 +15,7 @@ use ZnCore\Domain\Relations\relations\OneToManyRelation;
 use ZnCore\Domain\Relations\relations\OneToOneRelation;
 use ZnLib\Db\Base\BaseEloquentCrudRepository;
 use ZnLib\Db\Capsule\Manager;
-use ZnLib\Db\Mappers\JsonMapper;
+use ZnDatabase\Base\Domain\Mappers\JsonMapper;
 
 class ItemRepository extends BaseEloquentCrudRepository implements ItemRepositoryInterface
 {
