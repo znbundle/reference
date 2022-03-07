@@ -13,8 +13,8 @@ use ZnCore\Domain\Interfaces\Entity\EntityIdInterface;
 use ZnCore\Domain\Libs\Query;
 use ZnCore\Domain\Relations\relations\OneToManyRelation;
 use ZnCore\Domain\Relations\relations\OneToOneRelation;
-use ZnLib\Db\Base\BaseEloquentCrudRepository;
-use ZnLib\Db\Capsule\Manager;
+use ZnDatabase\Eloquent\Domain\Base\BaseEloquentCrudRepository;
+use ZnDatabase\Eloquent\Domain\Capsule\Manager;
 use ZnDatabase\Base\Domain\Mappers\JsonMapper;
 
 class ItemRepository extends BaseEloquentCrudRepository implements ItemRepositoryInterface

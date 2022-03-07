@@ -7,7 +7,7 @@ use ZnBundle\Reference\Domain\Interfaces\Services\BookServiceInterface;
 use ZnCore\Domain\Entities\Query\Where;
 use ZnCore\Domain\Interfaces\Libs\EntityManagerInterface;
 use ZnCore\Domain\Libs\Query;
-use ZnLib\Db\Capsule\Manager;
+use ZnDatabase\Eloquent\Domain\Capsule\Manager;
 
 abstract class BaseItemRepository extends ItemRepository implements ItemRepositoryInterface
 {
