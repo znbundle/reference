@@ -3,7 +3,7 @@
 namespace Migrations;
 
 use Illuminate\Database\Schema\Builder;
-use ZnLib\Migration\Domain\Base\BaseColumnMigration;
+use ZnDatabase\Migration\Domain\Base\BaseColumnMigration;
 
 class m_2021_10_20_171735_remove_translate_table extends BaseColumnMigration
 {
