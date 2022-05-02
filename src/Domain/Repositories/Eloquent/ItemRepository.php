@@ -9,7 +9,7 @@ use ZnBundle\Reference\Domain\Interfaces\Repositories\BookRepositoryInterface;
 use ZnBundle\Reference\Domain\Interfaces\Repositories\ItemRepositoryInterface;
 use ZnBundle\Reference\Domain\Interfaces\Repositories\ItemTranslationRepositoryInterface;
 use ZnCore\Domain\Enums\RelationEnum;
-use ZnCore\Domain\Interfaces\Entity\EntityIdInterface;
+use ZnCore\Contract\Domain\Interfaces\Entities\EntityIdInterface;
 use ZnCore\Domain\Libs\Query;
 use ZnCore\Domain\Relations\relations\OneToManyRelation;
 use ZnCore\Domain\Relations\relations\OneToOneRelation;

@@ -10,7 +10,7 @@ use ZnCore\Base\Helpers\EnumHelper;
 use ZnCore\Base\Libs\I18Next\Traits\I18nTrait;
 use ZnCore\Domain\Constraints\Enum;
 use ZnCore\Domain\Interfaces\Entity\ValidateEntityByMetadataInterface;
-use ZnCore\Domain\Interfaces\Entity\EntityIdInterface;
+use ZnCore\Contract\Domain\Interfaces\Entities\EntityIdInterface;
 use DateTime;
 use ZnCore\Domain\Traits\Entity\SoftDeleteEntityTrait;
 use ZnCore\Domain\Traits\Entity\SoftRestoreEntityTrait;

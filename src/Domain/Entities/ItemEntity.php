@@ -8,7 +8,7 @@ use ZnBundle\Language\Domain\Interfaces\Services\RuntimeLanguageServiceInterface
 use ZnCore\Base\Helpers\EnumHelper;
 use ZnCore\Base\Libs\I18Next\Traits\I18nTrait;
 use ZnCore\Domain\Constraints\Enum;
-use ZnCore\Domain\Interfaces\Entity\EntityIdInterface;
+use ZnCore\Contract\Domain\Interfaces\Entities\EntityIdInterface;
 use ZnCore\Domain\Interfaces\Entity\ValidateEntityByMetadataInterface;
 use ZnCore\Base\Enums\StatusEnum;
 use Symfony\Component\Validator\Constraints as Assert;
