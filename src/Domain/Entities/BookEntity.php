@@ -27,6 +27,8 @@ class BookEntity implements ValidateEntityByMetadataInterface, EntityIdInterface
 
     private $id = null;
 
+    private $parentId = null;
+
     private $code = null;
 
     private $title = null;
@@ -79,6 +81,16 @@ class BookEntity implements ValidateEntityByMetadataInterface, EntityIdInterface
     public function getId()
     {
         return $this->id;
+    }
+
+    public function getParentId()
+    {
+        return $this->parentId;
+    }
+
+    public function setParentId($parentId): void
+    {
+        $this->parentId = $parentId;
     }
 
     public function getCode()
