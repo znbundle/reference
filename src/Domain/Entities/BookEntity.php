@@ -9,6 +9,7 @@ use ZnCore\Base\Enums\StatusEnum;
 use ZnCore\Base\Helpers\EnumHelper;
 use ZnCore\Base\Libs\I18Next\Traits\I18nTrait;
 use ZnCore\Domain\Constraints\Enum;
+use ZnCore\Domain\Interfaces\Entity\UniqueInterface;
 use ZnCore\Domain\Interfaces\Entity\ValidateEntityByMetadataInterface;
 use ZnCore\Contract\Domain\Interfaces\Entities\EntityIdInterface;
 use DateTime;
@@ -16,7 +17,7 @@ use ZnCore\Domain\Traits\Entity\SoftDeleteEntityTrait;
 use ZnCore\Domain\Traits\Entity\SoftRestoreEntityTrait;
 use ZnCore\Domain\Traits\Entity\StatusReadOnlyEntityTrait;
 
-class BookEntity implements ValidateEntityByMetadataInterface, EntityIdInterface
+class BookEntity implements ValidateEntityByMetadataInterface, EntityIdInterface, UniqueInterface
 {
 
     use StatusReadOnlyEntityTrait;
@@ -25,6 +26,8 @@ class BookEntity implements ValidateEntityByMetadataInterface, EntityIdInterface
     use I18nTrait;
 
     private $id = null;
+
+    private $code = null;
 
     private $title = null;
 
@@ -61,6 +64,13 @@ class BookEntity implements ValidateEntityByMetadataInterface, EntityIdInterface
         $metadata->addPropertyConstraint('createdAt', new Assert\NotBlank);
     }
 
+    public function unique(): array
+    {
+        return [
+            ['entity'],
+        ];
+    }
+
     public function setId($value)
     {
         $this->id = $value;
@@ -69,6 +79,16 @@ class BookEntity implements ValidateEntityByMetadataInterface, EntityIdInterface
     public function getId()
     {
         return $this->id;
+    }
+
+    public function getCode()
+    {
+        return $this->code;
+    }
+
+    public function setCode($code): void
+    {
+        $this->code = $code;
     }
 
     public function setTitle($value): void

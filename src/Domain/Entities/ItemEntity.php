@@ -9,6 +9,7 @@ use ZnCore\Base\Helpers\EnumHelper;
 use ZnCore\Base\Libs\I18Next\Traits\I18nTrait;
 use ZnCore\Domain\Constraints\Enum;
 use ZnCore\Contract\Domain\Interfaces\Entities\EntityIdInterface;
+use ZnCore\Domain\Interfaces\Entity\UniqueInterface;
 use ZnCore\Domain\Interfaces\Entity\ValidateEntityByMetadataInterface;
 use ZnCore\Base\Enums\StatusEnum;
 use Symfony\Component\Validator\Constraints as Assert;
@@ -17,7 +18,7 @@ use ZnCore\Domain\Traits\Entity\SoftDeleteEntityTrait;
 use ZnCore\Domain\Traits\Entity\SoftRestoreEntityTrait;
 use ZnCore\Domain\Traits\Entity\StatusReadOnlyEntityTrait;
 
-class ItemEntity implements ValidateEntityByMetadataInterface, EntityIdInterface
+class ItemEntity implements ValidateEntityByMetadataInterface, EntityIdInterface, UniqueInterface
 {
 
     use StatusReadOnlyEntityTrait;
@@ -63,6 +64,13 @@ class ItemEntity implements ValidateEntityByMetadataInterface, EntityIdInterface
         $metadata->addPropertyConstraint('sort', new Assert\PositiveOrZero());
         $metadata->addPropertyConstraint('title', new Assert\NotBlank);
         $metadata->addPropertyConstraint('titleI18n', new Assert\NotBlank);
+    }
+
+    public function unique(): array
+    {
+        return [
+            ['bookId', 'code'],
+        ];
     }
 
     public function setId($value)
