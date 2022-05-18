@@ -62,7 +62,7 @@ class ItemEntity implements ValidateEntityByMetadataInterface, EntityIdInterface
             'class' => StatusEnum::class,
         ]));
         $metadata->addPropertyConstraint('sort', new Assert\PositiveOrZero());
-        $metadata->addPropertyConstraint('title', new Assert\NotBlank);
+        $metadata->addPropertyConstraint('title', new Assert\Length(['min' => 1]));
         $metadata->addPropertyConstraint('titleI18n', new Assert\NotBlank);
     }
 
