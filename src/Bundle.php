@@ -11,6 +11,7 @@ class Bundle extends BaseBundle
     {
         return [
             __DIR__ . '/Rpc/config/item-routes.php',
+            __DIR__ . '/Rpc/config/book-routes.php',
         ];
     }
     
