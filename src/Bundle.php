@@ -7,6 +7,20 @@ use ZnCore\Base\Libs\App\Base\BaseBundle;
 class Bundle extends BaseBundle
 {
 
+    public function symfonyRpc(): array
+    {
+        return [
+            __DIR__ . '/Rpc/config/item-routes.php',
+        ];
+    }
+    
+    public function rbac(): array
+    {
+        return [
+            __DIR__ . '/Domain/config/rbac.php',
+        ];
+    }
+    
     public function yiiAdmin(): array
     {
         return [

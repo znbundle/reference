@@ -69,7 +69,7 @@ class BookEntity implements ValidateEntityByMetadataInterface, EntityIdInterface
     public function unique(): array
     {
         return [
-            ['entity'],
+            ['code'],
         ];
     }
 
