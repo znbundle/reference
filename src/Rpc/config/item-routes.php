@@ -13,6 +13,8 @@ return [
         'handler_class' => ItemController::class,
         'handler_method' => 'all',
         'status_id' => 100,
+        'title' => null,
+        'description' => null,
     ],
     [
         'method_name' => 'referenceItem.oneById',
@@ -23,6 +25,8 @@ return [
         'handler_class' => ItemController::class,
         'handler_method' => 'oneById',
         'status_id' => 100,
+        'title' => null,
+        'description' => null,
     ],
     [
         'method_name' => 'referenceItem.create',
@@ -33,6 +37,8 @@ return [
         'handler_class' => ItemController::class,
         'handler_method' => 'add',
         'status_id' => 100,
+        'title' => null,
+        'description' => null,
     ],
     [
         'method_name' => 'referenceItem.update',
@@ -43,6 +49,8 @@ return [
         'handler_class' => ItemController::class,
         'handler_method' => 'update',
         'status_id' => 100,
+        'title' => null,
+        'description' => null,
     ],
     [
         'method_name' => 'referenceItem.delete',
@@ -53,6 +61,8 @@ return [
         'handler_class' => ItemController::class,
         'handler_method' => 'delete',
         'status_id' => 100,
+        'title' => null,
+        'description' => null,
     ],
 
 ];
