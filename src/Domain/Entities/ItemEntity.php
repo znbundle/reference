@@ -131,7 +131,6 @@ class ItemEntity implements ValidateEntityByMetadataInterface, EntityIdInterface
     public function setTitleI18n($titleI18n): void
     {
         $this->_setI18nArray('title', $titleI18n);
-//        $this->titleI18n = $titleI18n;
     }
 
     public function getShortTitle()
