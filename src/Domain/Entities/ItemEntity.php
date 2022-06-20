@@ -14,8 +14,8 @@ use ZnCore\Base\Libs\Validation\Interfaces\ValidationByMetadataInterface;
 use ZnCore\Base\Enums\StatusEnum;
 use Symfony\Component\Validator\Constraints as Assert;
 use DateTime;
-use ZnCore\Domain\Traits\Entity\SoftDeleteEntityTrait;
-use ZnCore\Domain\Traits\Entity\SoftRestoreEntityTrait;
+use ZnCore\Base\Libs\SoftDelete\Traits\Entity\SoftDeleteEntityTrait;
+use ZnCore\Base\Libs\SoftDelete\Traits\Entity\SoftRestoreEntityTrait;
 use ZnCore\Domain\Traits\Entity\StatusReadOnlyEntityTrait;
 
 class ItemEntity implements ValidationByMetadataInterface, EntityIdInterface, UniqueInterface

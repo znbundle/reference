@@ -13,8 +13,8 @@ use ZnCore\Base\Libs\Entity\Interfaces\UniqueInterface;
 use ZnCore\Base\Libs\Validation\Interfaces\ValidationByMetadataInterface;
 use ZnCore\Contract\Domain\Interfaces\Entities\EntityIdInterface;
 use DateTime;
-use ZnCore\Domain\Traits\Entity\SoftDeleteEntityTrait;
-use ZnCore\Domain\Traits\Entity\SoftRestoreEntityTrait;
+use ZnCore\Base\Libs\SoftDelete\Traits\Entity\SoftDeleteEntityTrait;
+use ZnCore\Base\Libs\SoftDelete\Traits\Entity\SoftRestoreEntityTrait;
 use ZnCore\Domain\Traits\Entity\StatusReadOnlyEntityTrait;
 
 class BookEntity implements ValidationByMetadataInterface, EntityIdInterface, UniqueInterface
