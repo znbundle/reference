@@ -4,7 +4,7 @@ namespace ZnBundle\Reference\Yii2\Admin\Filters;
 
 use Symfony\Component\Validator\Mapping\ClassMetadata;
 use ZnCore\Domain\Constraints\Enum;
-use ZnCore\Domain\Interfaces\Entity\ValidateEntityByMetadataInterface;
+use ZnCore\Base\Libs\Entity\Interfaces\ValidateEntityByMetadataInterface;
 use ZnSandbox\Sandbox\Status\Domain\Enums\StatusEnum;
 
 class BookFilter implements ValidateEntityByMetadataInterface
