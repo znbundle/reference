@@ -3,7 +3,7 @@
 namespace ZnBundle\Reference\Yii2\Admin\Filters;
 
 use Symfony\Component\Validator\Mapping\ClassMetadata;
-use ZnCore\Domain\Constraints\Enum;
+use ZnCore\Base\Libs\Enum\Constraints\Enum;
 use ZnCore\Base\Libs\Validation\Interfaces\ValidationByMetadataInterface;
 use ZnSandbox\Sandbox\Status\Domain\Enums\StatusEnum;
 
