@@ -10,7 +10,7 @@ use ZnBundle\Reference\Domain\Entities\ItemEntity;
 use ZnBundle\Reference\Domain\Interfaces\Repositories\ItemRepositoryInterface;
 use ZnCore\Base\Exceptions\NotFoundException;
 use ZnCore\Base\Libs\Container\Helpers\ContainerHelper;
-use ZnCore\Domain\Exceptions\UnprocessibleEntityException;
+use ZnCore\Base\Libs\Validation\Exceptions\UnprocessibleEntityException;
 use ZnCore\Domain\Libs\Query;
 use ZnKaz\Iin\Domain\Helpers\IinParser;
 use Exception;

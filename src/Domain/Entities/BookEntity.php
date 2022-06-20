@@ -10,14 +10,14 @@ use ZnCore\Base\Helpers\EnumHelper;
 use ZnCore\Base\Libs\I18Next\Traits\I18nTrait;
 use ZnCore\Domain\Constraints\Enum;
 use ZnCore\Base\Libs\Entity\Interfaces\UniqueInterface;
-use ZnCore\Base\Libs\Entity\Interfaces\ValidateEntityByMetadataInterface;
+use ZnCore\Base\Libs\Validation\Interfaces\ValidationByMetadataInterface;
 use ZnCore\Contract\Domain\Interfaces\Entities\EntityIdInterface;
 use DateTime;
 use ZnCore\Domain\Traits\Entity\SoftDeleteEntityTrait;
 use ZnCore\Domain\Traits\Entity\SoftRestoreEntityTrait;
 use ZnCore\Domain\Traits\Entity\StatusReadOnlyEntityTrait;
 
-class BookEntity implements ValidateEntityByMetadataInterface, EntityIdInterface, UniqueInterface
+class BookEntity implements ValidationByMetadataInterface, EntityIdInterface, UniqueInterface
 {
 
     use StatusReadOnlyEntityTrait;

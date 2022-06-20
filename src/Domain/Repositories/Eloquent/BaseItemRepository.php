@@ -5,7 +5,7 @@ namespace ZnBundle\Reference\Domain\Repositories\Eloquent;
 use ZnBundle\Reference\Domain\Interfaces\Repositories\ItemRepositoryInterface;
 use ZnBundle\Reference\Domain\Interfaces\Services\BookServiceInterface;
 use ZnCore\Domain\Entities\Query\Where;
-use ZnCore\Domain\Interfaces\Libs\EntityManagerInterface;
+use ZnCore\Base\Libs\EntityManager\Interfaces\EntityManagerInterface;
 use ZnCore\Domain\Libs\Query;
 use ZnDatabase\Eloquent\Domain\Capsule\Manager;
 

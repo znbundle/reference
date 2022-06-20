@@ -13,7 +13,7 @@ use ZnBundle\Reference\Domain\Interfaces\Repositories\ItemTranslationRepositoryI
 use ZnCore\Base\Exceptions\NotFoundException;
 use ZnCore\Domain\Enums\RelationEnum;
 use ZnCore\Contract\Domain\Interfaces\Entities\EntityIdInterface;
-use ZnCore\Domain\Exceptions\UnprocessibleEntityException;
+use ZnCore\Base\Libs\Validation\Exceptions\UnprocessibleEntityException;
 use ZnCore\Domain\Libs\Query;
 use ZnCore\Domain\Relations\relations\OneToManyRelation;
 use ZnCore\Domain\Relations\relations\OneToOneRelation;
