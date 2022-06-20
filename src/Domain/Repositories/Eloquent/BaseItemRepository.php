@@ -4,9 +4,9 @@ namespace ZnBundle\Reference\Domain\Repositories\Eloquent;
 
 use ZnBundle\Reference\Domain\Interfaces\Repositories\ItemRepositoryInterface;
 use ZnBundle\Reference\Domain\Interfaces\Services\BookServiceInterface;
-use ZnCore\Domain\Entities\Query\Where;
+use ZnCore\Base\Libs\Query\Entities\Where;
 use ZnCore\Base\Libs\EntityManager\Interfaces\EntityManagerInterface;
-use ZnCore\Domain\Libs\Query;
+use ZnCore\Base\Libs\Query\Entities\Query;
 use ZnDatabase\Eloquent\Domain\Capsule\Manager;
 
 abstract class BaseItemRepository extends ItemRepository implements ItemRepositoryInterface
