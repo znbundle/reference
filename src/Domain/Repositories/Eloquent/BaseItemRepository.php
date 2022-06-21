@@ -39,7 +39,7 @@ abstract class BaseItemRepository extends ItemRepository implements ItemReposito
         return $query;
     }*/
 
-    protected function forgeQuery(Query $query = null)
+    protected function forgeQuery(Query $query = null): Query
     {
         $query = parent::forgeQuery($query);
         if ($this->bookId) {

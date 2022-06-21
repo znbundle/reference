@@ -48,7 +48,7 @@ class ItemRepository extends BaseEloquentCrudRepository implements ItemRepositor
                     /** @var BookEntity $bookEntity */
                     $bookEntity = $this
                         ->getEntityManager()
-                        ->getRepositoryByEntityClass(BookEntity::class)
+                        ->getRepository(BookEntity::class)
                         ->oneByName($filterModel->getBookName());
                     $query->where('book_id', $bookEntity->getId());
                 } catch (NotFoundException $e) {

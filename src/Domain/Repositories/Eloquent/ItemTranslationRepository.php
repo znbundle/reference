@@ -28,7 +28,7 @@ class ItemTranslationRepository extends BaseEloquentCrudRepository implements It
         $this->translationService = I18Next::getService();
     }
 
-    protected function forgeQuery(Query $query = null)
+    protected function forgeQuery(Query $query = null): Query
     {
         $query = parent::forgeQuery($query);
         $where = new Where('language_code', $this->translationService->getLanguage());
