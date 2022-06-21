@@ -2,26 +2,25 @@
 
 namespace ZnBundle\Reference\Domain\Entities;
 
+use DateTime;
 use Illuminate\Support\Collection;
+use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Component\Validator\Mapping\ClassMetadata;
 use ZnBundle\Language\Domain\Interfaces\Services\RuntimeLanguageServiceInterface;
-use ZnCore\Base\Libs\Enum\Helpers\EnumHelper;
-use ZnCore\Base\Libs\I18Next\Traits\I18nTrait;
-use ZnCore\Base\Libs\Enum\Constraints\Enum;
-use ZnCore\Contract\Domain\Interfaces\Entities\EntityIdInterface;
-use ZnCore\Base\Libs\Entity\Interfaces\UniqueInterface;
-use ZnCore\Base\Libs\Validation\Interfaces\ValidationByMetadataInterface;
 use ZnCore\Base\Enums\StatusEnum;
-use Symfony\Component\Validator\Constraints as Assert;
-use DateTime;
+use ZnCore\Base\Helpers\Helper;
+use ZnCore\Base\Libs\Entity\Interfaces\UniqueInterface;
+use ZnCore\Base\Libs\Enum\Constraints\Enum;
+use ZnCore\Base\Libs\I18Next\Traits\I18nTrait;
 use ZnCore\Base\Libs\SoftDelete\Traits\Entity\SoftDeleteEntityTrait;
 use ZnCore\Base\Libs\SoftDelete\Traits\Entity\SoftRestoreEntityTrait;
-use ZnCore\Domain\Traits\Entity\StatusReadOnlyEntityTrait;
+use ZnCore\Base\Libs\Validation\Interfaces\ValidationByMetadataInterface;
+use ZnCore\Contract\Domain\Interfaces\Entities\EntityIdInterface;
 
 class ItemEntity implements ValidationByMetadataInterface, EntityIdInterface, UniqueInterface
 {
 
-    use StatusReadOnlyEntityTrait;
+//    use StatusReadOnlyEntityTrait;
     use SoftDeleteEntityTrait;
     use SoftRestoreEntityTrait;
     use I18nTrait;
@@ -176,6 +175,17 @@ class ItemEntity implements ValidationByMetadataInterface, EntityIdInterface, Un
     public function getProps()
     {
         return $this->props;
+    }
+
+    public function setStatusId(int $value): void
+    {
+        Helper::checkReadOnly($this->statusId, $value);
+        $this->statusId = $value;
+    }
+
+    public function getStatusId(): int
+    {
+        return $this->statusId;
     }
 
     public function setCreatedAt($value)
