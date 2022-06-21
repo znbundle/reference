@@ -12,14 +12,14 @@ use ZnBundle\Reference\Domain\Interfaces\Repositories\ItemRepositoryInterface;
 use ZnBundle\Reference\Domain\Interfaces\Repositories\ItemTranslationRepositoryInterface;
 use ZnCore\Base\Exceptions\NotFoundException;
 use ZnCore\Domain\Enums\RelationEnum;
-use ZnCore\Contract\Domain\Interfaces\Entities\EntityIdInterface;
+use ZnCore\Base\Libs\Entity\Interfaces\EntityIdInterface;
 use ZnCore\Base\Libs\Validation\Exceptions\UnprocessibleEntityException;
 use ZnCore\Base\Libs\Query\Entities\Query;
 use ZnCore\Base\Libs\Relation\Libs\Types\OneToManyRelation;
 use ZnCore\Base\Libs\Relation\Libs\Types\OneToOneRelation;
 use ZnDatabase\Eloquent\Domain\Base\BaseEloquentCrudRepository;
 use ZnDatabase\Eloquent\Domain\Capsule\Manager;
-use ZnDatabase\Base\Domain\Mappers\JsonMapper;
+use ZnCore\Base\Libs\Repository\Mappers\JsonMapper;
 use function Deployer\add;
 
 class ItemRepository extends BaseEloquentCrudRepository implements ItemRepositoryInterface

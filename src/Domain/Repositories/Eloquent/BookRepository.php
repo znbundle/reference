@@ -7,7 +7,7 @@ use ZnBundle\Reference\Domain\Interfaces\Repositories\BookRepositoryInterface;
 use ZnCore\Base\Libs\Query\Entities\Where;
 use ZnCore\Base\Libs\Query\Entities\Query;
 use ZnDatabase\Eloquent\Domain\Base\BaseEloquentCrudRepository;
-use ZnDatabase\Base\Domain\Mappers\JsonMapper;
+use ZnCore\Base\Libs\Repository\Mappers\JsonMapper;
 
 class BookRepository extends BaseEloquentCrudRepository implements BookRepositoryInterface
 {

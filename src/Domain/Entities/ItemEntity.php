@@ -15,7 +15,7 @@ use ZnCore\Base\Libs\I18Next\Traits\I18nTrait;
 use ZnCore\Base\Libs\SoftDelete\Traits\Entity\SoftDeleteEntityTrait;
 use ZnCore\Base\Libs\SoftDelete\Traits\Entity\SoftRestoreEntityTrait;
 use ZnCore\Base\Libs\Validation\Interfaces\ValidationByMetadataInterface;
-use ZnCore\Contract\Domain\Interfaces\Entities\EntityIdInterface;
+use ZnCore\Base\Libs\Entity\Interfaces\EntityIdInterface;
 
 class ItemEntity implements ValidationByMetadataInterface, EntityIdInterface, UniqueInterface
 {
