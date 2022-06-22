@@ -4,10 +4,10 @@ namespace ZnBundle\Reference\Domain\Repositories\Eloquent;
 
 use ZnBundle\Reference\Domain\Entities\BookEntity;
 use ZnBundle\Reference\Domain\Interfaces\Repositories\BookRepositoryInterface;
-use ZnCore\Base\Libs\Query\Entities\Where;
-use ZnCore\Base\Libs\Query\Entities\Query;
+use ZnCore\Domain\Query\Entities\Where;
+use ZnCore\Domain\Query\Entities\Query;
 use ZnDatabase\Eloquent\Domain\Base\BaseEloquentCrudRepository;
-use ZnCore\Base\Libs\Repository\Mappers\JsonMapper;
+use ZnCore\Domain\Repository\Mappers\JsonMapper;
 
 class BookRepository extends BaseEloquentCrudRepository implements BookRepositoryInterface
 {

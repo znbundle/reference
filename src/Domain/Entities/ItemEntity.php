@@ -9,13 +9,13 @@ use Symfony\Component\Validator\Mapping\ClassMetadata;
 use ZnBundle\Language\Domain\Interfaces\Services\RuntimeLanguageServiceInterface;
 use ZnCore\Base\Enums\StatusEnum;
 use ZnCore\Base\Helpers\Helper;
-use ZnCore\Base\Libs\Entity\Interfaces\UniqueInterface;
+use ZnCore\Domain\Entity\Interfaces\UniqueInterface;
 use ZnCore\Base\Libs\Enum\Constraints\Enum;
 use ZnCore\Base\Libs\I18Next\Traits\I18nTrait;
 use ZnCore\Base\Libs\SoftDelete\Traits\Entity\SoftDeleteEntityTrait;
 use ZnCore\Base\Libs\SoftDelete\Traits\Entity\SoftRestoreEntityTrait;
 use ZnCore\Base\Libs\Validation\Interfaces\ValidationByMetadataInterface;
-use ZnCore\Base\Libs\Entity\Interfaces\EntityIdInterface;
+use ZnCore\Domain\Entity\Interfaces\EntityIdInterface;
 
 class ItemEntity implements ValidationByMetadataInterface, EntityIdInterface, UniqueInterface
 {

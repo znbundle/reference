@@ -6,12 +6,12 @@ use App\Organization\Domain\Entities\EmployeeEntity;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use ZnBundle\Reference\Domain\Entities\ItemEntity;
 use ZnBundle\Reference\Domain\Interfaces\Services\BookServiceInterface;
-use ZnCore\Base\Libs\Query\Entities\Where;
-use ZnCore\Base\Libs\Domain\Enums\EventEnum;
-use ZnCore\Base\Libs\Domain\Events\EntityEvent;
-use ZnCore\Base\Libs\EntityManager\Interfaces\EntityManagerInterface;
-use ZnCore\Base\Libs\Query\Entities\Query;
-use ZnCore\Base\Libs\EntityManager\Traits\EntityManagerAwareTrait;
+use ZnCore\Domain\Query\Entities\Where;
+use ZnCore\Domain\Domain\Enums\EventEnum;
+use ZnCore\Domain\Domain\Events\EntityEvent;
+use ZnCore\Domain\EntityManager\Interfaces\EntityManagerInterface;
+use ZnCore\Domain\Query\Entities\Query;
+use ZnCore\Domain\EntityManager\Traits\EntityManagerAwareTrait;
 use ZnSandbox\Sandbox\Person2\Domain\Interfaces\Services\MyPersonServiceInterface;
 
 class BookIdSubscriber implements EventSubscriberInterface
