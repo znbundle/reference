@@ -7,14 +7,14 @@ use Illuminate\Support\Collection;
 use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Component\Validator\Mapping\ClassMetadata;
 use ZnBundle\Language\Domain\Interfaces\Services\RuntimeLanguageServiceInterface;
-use ZnCore\Base\Libs\Status\Enums\StatusEnum;
-use ZnCore\Base\Libs\ReadOnly\Helpers\ReadOnlyHelper;
+use ZnCore\Base\Status\Enums\StatusEnum;
+use ZnCore\Base\ReadOnly\Helpers\ReadOnlyHelper;
 use ZnCore\Domain\Entity\Interfaces\UniqueInterface;
-use ZnCore\Base\Libs\Enum\Constraints\Enum;
-use ZnCore\Base\Libs\I18Next\Traits\I18nTrait;
-use ZnCore\Base\Libs\SoftDelete\Traits\Entity\SoftDeleteEntityTrait;
-use ZnCore\Base\Libs\SoftDelete\Traits\Entity\SoftRestoreEntityTrait;
-use ZnCore\Base\Libs\Validation\Interfaces\ValidationByMetadataInterface;
+use ZnCore\Base\Enum\Constraints\Enum;
+use ZnCore\Base\I18Next\Traits\I18nTrait;
+use ZnCore\Base\SoftDelete\Traits\Entity\SoftDeleteEntityTrait;
+use ZnCore\Base\SoftDelete\Traits\Entity\SoftRestoreEntityTrait;
+use ZnCore\Base\Validation\Interfaces\ValidationByMetadataInterface;
 use ZnCore\Domain\Entity\Interfaces\EntityIdInterface;
 
 class ItemEntity implements ValidationByMetadataInterface, EntityIdInterface, UniqueInterface

@@ -2,7 +2,7 @@
 
 namespace ZnBundle\Reference\Yii2\Admin\Forms;
 
-use ZnCore\Base\Libs\Status\Enums\StatusEnum;
+use ZnCore\Base\Status\Enums\StatusEnum;
 use ZnYii\Base\Forms\BaseForm;
 
 class ItemForm extends BaseForm
