@@ -3,7 +3,7 @@
 namespace ZnBundle\Reference\Domain\Services;
 
 use ZnCore\Base\Enums\StatusEnum;
-use ZnCore\Base\Libs\SoftDelete\Subscribes\SoftDeleteBehavior;
+use ZnCore\Base\Libs\SoftDelete\Subscribers\SoftDeleteSubscriber;
 use ZnBundle\Reference\Domain\Interfaces\Repositories\ItemRepositoryInterface;
 use ZnBundle\Reference\Domain\Interfaces\Services\ItemServiceInterface;
 use ZnCore\Domain\Service\Base\BaseCrudService;
@@ -28,7 +28,7 @@ class ItemService extends BaseCrudService implements ItemServiceInterface
     public function subscribes(): array
     {
         return [
-            SoftDeleteBehavior::class,
+            SoftDeleteSubscriber::class,
         ];
     }
 

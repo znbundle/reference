@@ -3,7 +3,7 @@
 namespace ZnBundle\Reference\Domain\Services;
 
 use ZnBundle\Reference\Domain\Entities\BookEntity;
-use ZnCore\Base\Libs\SoftDelete\Subscribes\SoftDeleteBehavior;
+use ZnCore\Base\Libs\SoftDelete\Subscribers\SoftDeleteSubscriber;
 use ZnBundle\Reference\Domain\Interfaces\Repositories\BookRepositoryInterface;
 use ZnBundle\Reference\Domain\Interfaces\Services\BookServiceInterface;
 use ZnCore\Domain\Service\Base\BaseCrudService;
@@ -28,7 +28,7 @@ class BookService extends BaseCrudService implements BookServiceInterface
     public function subscribes(): array
     {
         return [
-            SoftDeleteBehavior::class,
+            SoftDeleteSubscriber::class,
         ];
     }
 
