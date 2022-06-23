@@ -12,7 +12,7 @@ use ZnBundle\Reference\Domain\Entities\ItemEntity;
 use ZnBundle\Reference\Domain\Enums\Rbac\ReferenceItemPermissionEnum;
 use ZnBundle\Reference\Domain\Interfaces\Services\BookServiceInterface;
 use ZnBundle\Reference\Domain\Interfaces\Services\ItemServiceInterface;
-use ZnCore\Base\Legacy\Yii\Helpers\ArrayHelper;
+use ZnCore\Base\Libs\Arr\Helpers\ArrayHelper;
 use ZnCore\Base\Libs\I18Next\Facades\I18Next;
 use ZnCore\Domain\Entity\Interfaces\EntityIdInterface;
 use ZnLib\Web\Widgets\BreadcrumbWidget;

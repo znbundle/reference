@@ -11,7 +11,7 @@ use yii\helpers\Url;
 use yii\web\Request;
 use yii\web\View;
 use ZnBundle\Reference\Yii2\Admin\Formatters\Actions\ItemListAction;
-use ZnCore\Base\Legacy\Yii\Helpers\ArrayHelper;
+use ZnCore\Base\Libs\Arr\Helpers\ArrayHelper;
 use ZnCore\Base\Libs\I18Next\Facades\I18Next;
 use ZnCore\Base\Libs\Validation\Interfaces\ValidationByMetadataInterface;
 use ZnCore\Domain\DataProvider\Libs\DataProvider;
