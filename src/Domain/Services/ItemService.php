@@ -2,7 +2,7 @@
 
 namespace ZnBundle\Reference\Domain\Services;
 
-use ZnCore\Base\Enums\StatusEnum;
+use ZnCore\Base\Libs\Status\Enums\StatusEnum;
 use ZnCore\Base\Libs\SoftDelete\Subscribers\SoftDeleteSubscriber;
 use ZnBundle\Reference\Domain\Interfaces\Repositories\ItemRepositoryInterface;
 use ZnBundle\Reference\Domain\Interfaces\Services\ItemServiceInterface;

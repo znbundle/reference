@@ -5,7 +5,7 @@ namespace ZnBundle\Reference\Domain\Filters;
 use ZnCore\Base\Libs\Validation\Interfaces\ValidationByMetadataInterface;
 use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Component\Validator\Mapping\ClassMetadata;
-use ZnCore\Base\Enums\StatusEnum;
+use ZnCore\Base\Libs\Status\Enums\StatusEnum;
 use ZnCore\Base\Libs\Enum\Constraints\Enum;
 
 class ItemFilter implements ValidationByMetadataInterface

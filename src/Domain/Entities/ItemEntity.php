@@ -7,8 +7,8 @@ use Illuminate\Support\Collection;
 use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Component\Validator\Mapping\ClassMetadata;
 use ZnBundle\Language\Domain\Interfaces\Services\RuntimeLanguageServiceInterface;
-use ZnCore\Base\Enums\StatusEnum;
-use ZnCore\Base\Helpers\Helper;
+use ZnCore\Base\Libs\Status\Enums\StatusEnum;
+use ZnCore\Base\Libs\ReadOnly\Helpers\ReadOnlyHelper;
 use ZnCore\Domain\Entity\Interfaces\UniqueInterface;
 use ZnCore\Base\Libs\Enum\Constraints\Enum;
 use ZnCore\Base\Libs\I18Next\Traits\I18nTrait;
@@ -179,7 +179,7 @@ class ItemEntity implements ValidationByMetadataInterface, EntityIdInterface, Un
 
     public function setStatusId(int $value): void
     {
-        Helper::checkReadOnly($this->statusId, $value);
+        ReadOnlyHelper::checkAttribute($this->statusId, $value);
         $this->statusId = $value;
     }
 

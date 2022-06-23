@@ -10,7 +10,7 @@ use yii\helpers\Url;
 use yii\web\Request;
 use yii\web\View;
 use ZnBundle\Reference\Domain\Entities\BookEntity;
-use ZnCore\Base\Enums\StatusEnum;
+use ZnCore\Base\Libs\Status\Enums\StatusEnum;
 use ZnCore\Base\Libs\I18Next\Facades\I18Next;
 use ZnLib\Web\Widgets\Detail\DetailWidget;
 use ZnLib\Web\Widgets\Format\Formatters\EnumFormatter;

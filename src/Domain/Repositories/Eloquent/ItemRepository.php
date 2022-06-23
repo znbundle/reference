@@ -10,7 +10,7 @@ use ZnBundle\Reference\Domain\Filters\ItemFilter;
 use ZnBundle\Reference\Domain\Interfaces\Repositories\BookRepositoryInterface;
 use ZnBundle\Reference\Domain\Interfaces\Repositories\ItemRepositoryInterface;
 use ZnBundle\Reference\Domain\Interfaces\Repositories\ItemTranslationRepositoryInterface;
-use ZnCore\Base\Exceptions\NotFoundException;
+use ZnCore\Domain\Entity\Exceptions\NotFoundException;
 use ZnCore\Domain\Enums\RelationEnum;
 use ZnCore\Domain\Entity\Interfaces\EntityIdInterface;
 use ZnCore\Base\Libs\Validation\Exceptions\UnprocessibleEntityException;
