@@ -67,7 +67,7 @@ class ItemRepository extends BaseEloquentCrudRepository implements ItemRepositor
         return $query;
     }*/
 
-    public function relations2()
+    public function relations()
     {
         return [
             /*[
