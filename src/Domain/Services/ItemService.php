@@ -2,16 +2,16 @@
 
 namespace ZnBundle\Reference\Domain\Services;
 
-use ZnCore\Base\Status\Enums\StatusEnum;
-use ZnCore\Base\SoftDelete\Subscribers\SoftDeleteSubscriber;
+use ZnLib\Components\Status\Enums\StatusEnum;
+use ZnLib\Components\SoftDelete\Subscribers\SoftDeleteSubscriber;
 use ZnBundle\Reference\Domain\Interfaces\Repositories\ItemRepositoryInterface;
 use ZnBundle\Reference\Domain\Interfaces\Services\ItemServiceInterface;
 use ZnCore\Domain\Service\Base\BaseCrudService;
 use ZnCore\Domain\Query\Entities\Where;
 use ZnCore\Domain\EntityManager\Interfaces\EntityManagerInterface;
 use ZnCore\Domain\Query\Entities\Query;
-use ZnCore\Base\SoftDelete\Traits\Service\SoftDeleteTrait;
-use ZnCore\Base\SoftDelete\Traits\Service\SoftRestoreTrait;
+use ZnLib\Components\SoftDelete\Traits\Service\SoftDeleteTrait;
+use ZnLib\Components\SoftDelete\Traits\Service\SoftRestoreTrait;
 
 class ItemService extends BaseCrudService implements ItemServiceInterface
 {

@@ -7,13 +7,13 @@ use Illuminate\Support\Collection;
 use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Component\Validator\Mapping\ClassMetadata;
 use ZnBundle\Language\Domain\Interfaces\Services\RuntimeLanguageServiceInterface;
-use ZnCore\Base\Status\Enums\StatusEnum;
-use ZnCore\Base\ReadOnly\Helpers\ReadOnlyHelper;
+use ZnLib\Components\Status\Enums\StatusEnum;
+use ZnLib\Components\ReadOnly\Helpers\ReadOnlyHelper;
 use ZnCore\Domain\Entity\Interfaces\UniqueInterface;
 use ZnCore\Base\Enum\Constraints\Enum;
-use ZnCore\Base\I18n\Traits\I18nTrait;
-use ZnCore\Base\SoftDelete\Traits\Entity\SoftDeleteEntityTrait;
-use ZnCore\Base\SoftDelete\Traits\Entity\SoftRestoreEntityTrait;
+use ZnLib\Components\I18n\Traits\I18nTrait;
+use ZnLib\Components\SoftDelete\Traits\Entity\SoftDeleteEntityTrait;
+use ZnLib\Components\SoftDelete\Traits\Entity\SoftRestoreEntityTrait;
 use ZnCore\Base\Validation\Interfaces\ValidationByMetadataInterface;
 use ZnCore\Domain\Entity\Interfaces\EntityIdInterface;
 

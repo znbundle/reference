@@ -10,7 +10,7 @@ use yii\helpers\Url;
 use ZnBundle\Reference\Domain\Entities\BookEntity;
 use ZnBundle\Reference\Domain\Enums\Rbac\ReferenceBookPermissionEnum;
 use ZnBundle\Reference\Domain\Interfaces\Services\BookServiceInterface;
-use ZnCore\Base\I18Next\Facades\I18Next;
+use ZnLib\Components\I18Next\Facades\I18Next;
 use ZnLib\Web\Widgets\BreadcrumbWidget;
 use ZnYii\Web\Controllers\BaseController;
 
