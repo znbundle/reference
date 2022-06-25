@@ -10,7 +10,7 @@ use ZnCore\Base\Status\Enums\StatusEnum;
 use ZnCore\Base\ReadOnly\Helpers\ReadOnlyHelper;
 use ZnCore\Domain\Entity\Interfaces\UniqueInterface;
 use ZnCore\Base\Enum\Constraints\Enum;
-use ZnCore\Base\I18Next\Traits\I18nTrait;
+use ZnCore\Base\I18n\Traits\I18nTrait;
 use ZnCore\Base\SoftDelete\Traits\Entity\SoftDeleteEntityTrait;
 use ZnCore\Base\SoftDelete\Traits\Entity\SoftRestoreEntityTrait;
 use ZnCore\Base\Validation\Interfaces\ValidationByMetadataInterface;
