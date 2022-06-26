@@ -15,12 +15,12 @@ use ZnCore\Base\Arr\Helpers\ArrayHelper;
 use ZnLib\Components\I18Next\Facades\I18Next;
 use ZnCore\Base\Validation\Interfaces\ValidationByMetadataInterface;
 use ZnCore\Domain\DataProvider\Libs\DataProvider;
-use ZnLib\Web\Components\Widget\Widgets\Collection\CollectionWidget;
-use ZnLib\Web\Components\Widget\Widgets\Format\Formatters\ActionFormatter;
-use ZnLib\Web\Components\Widget\Widgets\Format\Formatters\Actions\DeleteAction;
-use ZnLib\Web\Components\Widget\Widgets\Format\Formatters\Actions\UpdateAction;
-use ZnLib\Web\Components\Widget\Widgets\Format\Formatters\EnumFormatter;
-use ZnLib\Web\Components\Widget\Widgets\Format\Formatters\LinkFormatter;
+use ZnLib\Web\Components\TwBootstrap\Widgets\Collection\CollectionWidget;
+use ZnLib\Web\Components\TwBootstrap\Widgets\Format\Formatters\ActionFormatter;
+use ZnLib\Web\Components\TwBootstrap\Widgets\Format\Formatters\Actions\DeleteAction;
+use ZnLib\Web\Components\TwBootstrap\Widgets\Format\Formatters\Actions\UpdateAction;
+use ZnLib\Web\Components\TwBootstrap\Widgets\Format\Formatters\EnumFormatter;
+use ZnLib\Web\Components\TwBootstrap\Widgets\Format\Formatters\LinkFormatter;
 use ZnSandbox\Sandbox\Status\Domain\Enums\StatusEnum;
 use ZnSandbox\Sandbox\Status\Web\Widgets\FilterWidget;
 
@@ -90,7 +90,7 @@ $attributes = [
                     'baseUrl' => '/reference/item',
                 ],
                 'restore' => [
-                    'class' => \ZnLib\Web\Components\Widget\Widgets\Format\Formatters\Actions\RestoreAction::class,
+                    'class' => \ZnLib\Web\Components\TwBootstrap\Widgets\Format\Formatters\Actions\RestoreAction::class,
                     'linkParams' => [
                         'filter[book_id]' => 'book_id',
                         'id' => 'id',
