@@ -15,7 +15,7 @@ use ZnBundle\Reference\Domain\Interfaces\Services\ItemServiceInterface;
 use ZnCore\Base\Arr\Helpers\ArrayHelper;
 use ZnLib\Components\I18Next\Facades\I18Next;
 use ZnCore\Domain\Entity\Interfaces\EntityIdInterface;
-use ZnLib\Web\Widgets\BreadcrumbWidget;
+use ZnLib\Web\Components\Widget\Widgets\BreadcrumbWidget;
 use ZnYii\Web\Actions\CreateAction;
 use ZnYii\Web\Actions\DeleteAction;
 use ZnYii\Web\Actions\IndexAction;

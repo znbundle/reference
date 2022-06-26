@@ -5,7 +5,7 @@ namespace ZnBundle\Reference\Yii2\Admin;
 use yii\base\Module as YiiModule;
 use yii\helpers\Url;
 use ZnLib\Components\I18Next\Facades\I18Next;
-use ZnLib\Web\Widgets\BreadcrumbWidget;
+use ZnLib\Web\Components\Widget\Widgets\BreadcrumbWidget;
 
 class Module extends YiiModule
 {
