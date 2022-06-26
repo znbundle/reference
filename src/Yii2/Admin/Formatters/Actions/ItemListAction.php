@@ -2,7 +2,7 @@
 
 namespace ZnBundle\Reference\Yii2\Admin\Formatters\Actions;
 
-use ZnLib\Web\Components\TwBootstrap\Widgets\Format\Formatters\Actions\BaseAction;
+use ZnLib\Web\TwBootstrap\Widgets\Format\Formatters\Actions\BaseAction;
 
 class ItemListAction extends BaseAction
 {

@@ -12,8 +12,8 @@ use yii\web\View;
 use ZnBundle\Reference\Domain\Entities\BookEntity;
 use ZnLib\Components\Status\Enums\StatusEnum;
 use ZnLib\Components\I18Next\Facades\I18Next;
-use ZnLib\Web\Components\TwBootstrap\Widgets\Detail\DetailWidget;
-use ZnLib\Web\Components\TwBootstrap\Widgets\Format\Formatters\EnumFormatter;
+use ZnLib\Web\TwBootstrap\Widgets\Detail\DetailWidget;
+use ZnLib\Web\TwBootstrap\Widgets\Format\Formatters\EnumFormatter;
 use ZnYii\Base\Helpers\ActionHelper;
 
 $this->title = $entity->getTitle();
