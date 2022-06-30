@@ -49,7 +49,7 @@ class ItemRepository extends BaseEloquentCrudRepository implements ItemRepositor
                     $bookEntity = $this
                         ->getEntityManager()
                         ->getRepository(BookEntity::class)
-                        ->oneByName($filterModel->getBookName());
+                        ->findOneByName($filterModel->getBookName());
                     $query->where('book_id', $bookEntity->getId());
                 } catch (NotFoundException $e) {
                     throw(new UnprocessibleEntityException())

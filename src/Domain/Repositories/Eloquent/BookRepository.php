@@ -26,7 +26,7 @@ class BookRepository extends BaseEloquentCrudRepository implements BookRepositor
         ];
     }
 
-    public function oneByName(string $name, Query $query = null): BookEntity
+    public function findOneByName(string $name, Query $query = null): BookEntity
     {
         $query = $this->forgeQuery($query);
         $query->whereNew(new Where('entity', $name));

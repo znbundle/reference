@@ -43,7 +43,7 @@ class BookIdSubscriber implements EventSubscriberInterface
     {
         /** @var ItemEntity $entity */
         $entity = $event->getEntity();
-        $bookEntity = $this->bookService->oneByName($this->bookName);
+        $bookEntity = $this->bookService->findOneByName($this->bookName);
         $entity->setBookId($bookEntity->getId());
     }
 }

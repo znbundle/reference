@@ -9,5 +9,5 @@ use ZnCore\Domain\Query\Entities\Query;
 interface BookServiceInterface extends CrudServiceInterface
 {
 
-    public function oneByName(string $name, Query $query = null): BookEntity;
+    public function findOneByName(string $name, Query $query = null): BookEntity;
 }

@@ -57,7 +57,7 @@ class ItemBookService extends ItemService implements ItemBookServiceInterface
         if($this->bookId) {
             $query->whereNew(new Where('book_id', $this->getBookId()));
         } elseif($this->bookName) {
-            $bookEntity = $this->bookService->oneByName($this->bookName);
+            $bookEntity = $this->bookService->findOneByName($this->bookName);
             $query->whereNew(new Where('book_id', $bookEntity->getId()));
         }
         return $query;

@@ -32,8 +32,8 @@ class BookService extends BaseCrudService implements BookServiceInterface
         ];
     }
 
-    public function oneByName(string $name, Query $query = null): BookEntity
+    public function findOneByName(string $name, Query $query = null): BookEntity
     {
-        return $this->getRepository()->oneByName($name, $query);
+        return $this->getRepository()->findOneByName($name, $query);
     }
 }
