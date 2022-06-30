@@ -44,7 +44,7 @@ class ReferenceItemValidator extends ConstraintValidator
             $query = new Query();
             $query->with('book');
             /** @var ItemEntity $itemEntity */
-            $itemEntity = $itemRepository->oneById($value, $query);
+            $itemEntity = $itemRepository->findOneById($value, $query);
             if($itemEntity->getBook()->getEntity() != $constraint->bookName) {
                 $this->context->buildViolation($constraint->message)
                     ->setParameter('{{ value }}', $value)

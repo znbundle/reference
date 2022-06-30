@@ -96,7 +96,7 @@ class ItemController extends BaseController
     protected function addListBreadcrumb(int $bookId = null)
     {
         $bookId = $bookId ?: $this->getBookId();
-        $bookEntity = $this->bookService->oneById($bookId);
+        $bookEntity = $this->bookService->findOneById($bookId);
         $this->breadcrumbWidget->add(I18Next::t('reference', 'item.list') . " ({$bookEntity->getTitle()})", Url::to([$this->baseUri, 'filter[book_id]' => $bookId]));
     }
 
