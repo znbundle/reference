@@ -30,6 +30,6 @@ class BookRepository extends BaseEloquentCrudRepository implements BookRepositor
     {
         $query = $this->forgeQuery($query);
         $query->whereNew(new Where('entity', $name));
-        return $this->one($query);
+        return $this->findOne($query);
     }
 }
