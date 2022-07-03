@@ -2,7 +2,7 @@
 
 namespace ZnBundle\Reference\Domain\Repositories\Eloquent;
 
-use Illuminate\Support\Collection;
+use ZnCore\Domain\Collection\Libs\Collection;
 use ZnBundle\Eav\Domain\Interfaces\Repositories\ValidationRepositoryInterface;
 use ZnBundle\Reference\Domain\Entities\BookEntity;
 use ZnBundle\Reference\Domain\Entities\ItemEntity;
