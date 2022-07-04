@@ -42,7 +42,7 @@ class ItemEntity implements ValidationByMetadataInterface, EntityIdInterface, Un
     private $parent;
     private $children;
 
-    /* @var Collection | ItemTranslationEntity[] */
+    /* @var \ZnCore\Domain\Collection\Interfaces\Enumerable | ItemTranslationEntity[] */
 //    private $translations = null;
 
     public function __construct(RuntimeLanguageServiceInterface $languageService)
