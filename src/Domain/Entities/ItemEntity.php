@@ -3,6 +3,7 @@
 namespace ZnBundle\Reference\Domain\Entities;
 
 use DateTime;
+use ZnCore\Domain\Collection\Interfaces\Enumerable;
 use ZnCore\Domain\Collection\Libs\Collection;
 use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Component\Validator\Mapping\ClassMetadata;
@@ -208,12 +209,12 @@ class ItemEntity implements ValidationByMetadataInterface, EntityIdInterface, Un
         return $this->updatedAt;
     }
 
-    /*public function getTranslations(): ?Collection
+    /*public function getTranslations(): ?Enumerable
     {
         return $this->translations;
     }
 
-    public function setTranslations(Collection $translations = null): void
+    public function setTranslations(Enumerable $translations = null): void
     {
         $this->translations = $translations;
     }*/
@@ -238,12 +239,12 @@ class ItemEntity implements ValidationByMetadataInterface, EntityIdInterface, Un
         $this->parent = $parent;
     }
 
-    public function getChildren(): ?Collection
+    public function getChildren(): ?Enumerable
     {
         return $this->children;
     }
 
-    public function setChildren(?Collection $children): void
+    public function setChildren(?Enumerable $children): void
     {
         $this->children = $children;
     }
