@@ -2,25 +2,19 @@
 
 namespace ZnBundle\Reference\Domain\Repositories\Eloquent;
 
-use ZnCore\Domain\Collection\Libs\Collection;
-use ZnBundle\Eav\Domain\Interfaces\Repositories\ValidationRepositoryInterface;
 use ZnBundle\Reference\Domain\Entities\BookEntity;
 use ZnBundle\Reference\Domain\Entities\ItemEntity;
 use ZnBundle\Reference\Domain\Filters\ItemFilter;
 use ZnBundle\Reference\Domain\Interfaces\Repositories\BookRepositoryInterface;
 use ZnBundle\Reference\Domain\Interfaces\Repositories\ItemRepositoryInterface;
-use ZnBundle\Reference\Domain\Interfaces\Repositories\ItemTranslationRepositoryInterface;
+use ZnCore\Base\Validation\Exceptions\UnprocessibleEntityException;
 use ZnCore\Domain\Entity\Exceptions\NotFoundException;
 use ZnCore\Domain\Enums\RelationEnum;
-use ZnCore\Domain\Entity\Interfaces\EntityIdInterface;
-use ZnCore\Base\Validation\Exceptions\UnprocessibleEntityException;
 use ZnCore\Domain\Query\Entities\Query;
 use ZnCore\Domain\Relation\Libs\Types\OneToManyRelation;
 use ZnCore\Domain\Relation\Libs\Types\OneToOneRelation;
-use ZnDatabase\Eloquent\Domain\Base\BaseEloquentCrudRepository;
-use ZnDatabase\Eloquent\Domain\Capsule\Manager;
 use ZnCore\Domain\Repository\Mappers\JsonMapper;
-use function Deployer\add;
+use ZnDatabase\Eloquent\Domain\Base\BaseEloquentCrudRepository;
 
 class ItemRepository extends BaseEloquentCrudRepository implements ItemRepositoryInterface
 {
@@ -42,8 +36,8 @@ class ItemRepository extends BaseEloquentCrudRepository implements ItemRepositor
 
     public function forgeQueryByFilter(object $filterModel, Query $query)
     {
-        if($filterModel instanceof ItemFilter) {
-            if($filterModel->getBookName()) {
+        if ($filterModel instanceof ItemFilter) {
+            if ($filterModel->getBookName()) {
                 try {
                     /** @var BookEntity $bookEntity */
                     $bookEntity = $this
