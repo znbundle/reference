@@ -4,7 +4,7 @@ namespace ZnBundle\Reference\Domain\Repositories\Eloquent;
 
 use ZnBundle\Reference\Domain\Entities\ItemTranslationEntity;
 use ZnBundle\Reference\Domain\Interfaces\Repositories\ItemTranslationRepositoryInterface;
-use ZnLib\Components\I18Next\Facades\I18Next;
+use ZnLib\I18Next\Facades\I18Next;
 use ZnCore\Query\Entities\Where;
 use ZnCore\EntityManager\Interfaces\EntityManagerInterface;
 use ZnCore\Query\Entities\Query;
