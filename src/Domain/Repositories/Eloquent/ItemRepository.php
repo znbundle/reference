@@ -54,7 +54,7 @@ class ItemRepository extends BaseEloquentCrudRepository implements ItemRepositor
         parent::forgeQueryByFilter($filterModel, $query);
     }
 
-    /*protected function forgeQuery(Query $query = null)
+    /*protected function forgeQuery(Query $query = null): Query
     {
         $query = parent::forgeQuery($query);
         $query->with(['translations']);

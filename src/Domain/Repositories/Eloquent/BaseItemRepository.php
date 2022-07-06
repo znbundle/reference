@@ -32,7 +32,7 @@ abstract class BaseItemRepository extends ItemRepository implements ItemReposito
         return $this->bookName;
     }
 
-    /*protected function forgeQuery(Query $query = null)
+    /*protected function forgeQuery(Query $query = null): Query
     {
         $query = parent::forgeQuery($query);
         $query->whereNew(new Where('book_id', $this->getBookId()));

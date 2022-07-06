@@ -32,7 +32,7 @@ class ItemService extends BaseCrudService implements ItemServiceInterface
         ];
     }
 
-    protected function forgeQuery(Query $query = null)
+    protected function forgeQuery(Query $query = null): Query
     {
         $query = parent::forgeQuery($query);
 //        $query->where('status_id', StatusEnum::ENABLED);
