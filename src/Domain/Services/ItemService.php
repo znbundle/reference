@@ -6,10 +6,10 @@ use ZnLib\Components\Status\Enums\StatusEnum;
 use ZnLib\Components\SoftDelete\Subscribers\SoftDeleteSubscriber;
 use ZnBundle\Reference\Domain\Interfaces\Repositories\ItemRepositoryInterface;
 use ZnBundle\Reference\Domain\Interfaces\Services\ItemServiceInterface;
-use ZnCore\Domain\Service\Base\BaseCrudService;
-use ZnCore\Domain\Query\Entities\Where;
+use ZnCore\Service\Base\BaseCrudService;
+use ZnCore\Query\Entities\Where;
 use ZnCore\EntityManager\Interfaces\EntityManagerInterface;
-use ZnCore\Domain\Query\Entities\Query;
+use ZnCore\Query\Entities\Query;
 use ZnLib\Components\SoftDelete\Traits\Service\SoftDeleteTrait;
 use ZnLib\Components\SoftDelete\Traits\Service\SoftRestoreTrait;
 

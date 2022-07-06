@@ -2,7 +2,7 @@
 
 namespace ZnBundle\Reference\Domain\Interfaces\Services;
 
-use ZnCore\Domain\Service\Interfaces\CrudServiceInterface;
+use ZnCore\Service\Interfaces\CrudServiceInterface;
 
 interface ItemBookServiceInterface extends CrudServiceInterface
 {

@@ -11,7 +11,7 @@ use ZnBundle\Reference\Domain\Interfaces\Repositories\ItemRepositoryInterface;
 use ZnCore\Entity\Exceptions\NotFoundException;
 use ZnCore\Container\Helpers\ContainerHelper;
 use ZnCore\Validation\Exceptions\UnprocessibleEntityException;
-use ZnCore\Domain\Query\Entities\Query;
+use ZnCore\Query\Entities\Query;
 use ZnKaz\Iin\Domain\Helpers\IinParser;
 use Exception;
 

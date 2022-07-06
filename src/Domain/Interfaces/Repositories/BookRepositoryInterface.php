@@ -3,8 +3,8 @@
 namespace ZnBundle\Reference\Domain\Interfaces\Repositories;
 
 use ZnBundle\Reference\Domain\Entities\BookEntity;
-use ZnCore\Domain\Repository\Interfaces\CrudRepositoryInterface;
-use ZnCore\Domain\Query\Entities\Query;
+use ZnCore\Repository\Interfaces\CrudRepositoryInterface;
+use ZnCore\Query\Entities\Query;
 
 interface BookRepositoryInterface extends CrudRepositoryInterface
 {

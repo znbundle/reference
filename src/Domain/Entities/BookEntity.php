@@ -9,7 +9,7 @@ use ZnBundle\Language\Domain\Interfaces\Services\RuntimeLanguageServiceInterface
 use ZnLib\Components\Status\Enums\StatusEnum;
 use ZnLib\Components\ReadOnly\Helpers\ReadOnlyHelper;
 use ZnCore\Entity\Interfaces\UniqueInterface;
-use ZnCore\Base\Enum\Constraints\Enum;
+use ZnCore\Enum\Constraints\Enum;
 use ZnLib\Components\I18n\Traits\I18nTrait;
 use ZnLib\Components\SoftDelete\Traits\Entity\SoftDeleteEntityTrait;
 use ZnLib\Components\SoftDelete\Traits\Entity\SoftRestoreEntityTrait;

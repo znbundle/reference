@@ -15,7 +15,7 @@ use yii\web\Request;
 use yii\web\View;
 use ZnLib\Components\I18Next\Facades\I18Next;
 use ZnCore\Validation\Interfaces\ValidationByMetadataInterface;
-use ZnCore\Domain\DataProvider\Libs\DataProvider;
+use ZnCore\DataProvider\Libs\DataProvider;
 use ZnLib\Web\TwBootstrap\Widgets\Collection\CollectionWidget;
 use ZnLib\Web\TwBootstrap\Widgets\Format\Formatters\ActionFormatter;
 use ZnLib\Web\TwBootstrap\Widgets\Format\Formatters\EnumFormatter;

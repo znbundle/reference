@@ -3,8 +3,8 @@
 namespace ZnBundle\Reference\Domain\Interfaces\Services;
 
 use ZnBundle\Reference\Domain\Entities\BookEntity;
-use ZnCore\Domain\Service\Interfaces\CrudServiceInterface;
-use ZnCore\Domain\Query\Entities\Query;
+use ZnCore\Service\Interfaces\CrudServiceInterface;
+use ZnCore\Query\Entities\Query;
 
 interface BookServiceInterface extends CrudServiceInterface
 {
