@@ -14,7 +14,7 @@ use ZnBundle\Reference\Domain\Interfaces\Services\BookServiceInterface;
 use ZnBundle\Reference\Domain\Interfaces\Services\ItemServiceInterface;
 use ZnCore\Base\Arr\Helpers\ArrayHelper;
 use ZnLib\Components\I18Next\Facades\I18Next;
-use ZnCore\Domain\Entity\Interfaces\EntityIdInterface;
+use ZnCore\Entity\Interfaces\EntityIdInterface;
 use ZnLib\Web\TwBootstrap\Widgets\Breadcrumb\BreadcrumbWidget;
 use ZnYii\Web\Actions\CreateAction;
 use ZnYii\Web\Actions\DeleteAction;

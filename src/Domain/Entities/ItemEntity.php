@@ -7,10 +7,10 @@ use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Component\Validator\Mapping\ClassMetadata;
 use ZnBundle\Language\Domain\Interfaces\Services\RuntimeLanguageServiceInterface;
 use ZnCore\Base\Enum\Constraints\Enum;
-use ZnCore\Base\Validation\Interfaces\ValidationByMetadataInterface;
-use ZnCore\Domain\Collection\Interfaces\Enumerable;
-use ZnCore\Domain\Entity\Interfaces\EntityIdInterface;
-use ZnCore\Domain\Entity\Interfaces\UniqueInterface;
+use ZnCore\Validation\Interfaces\ValidationByMetadataInterface;
+use ZnCore\Collection\Interfaces\Enumerable;
+use ZnCore\Entity\Interfaces\EntityIdInterface;
+use ZnCore\Entity\Interfaces\UniqueInterface;
 use ZnLib\Components\I18n\Traits\I18nTrait;
 use ZnLib\Components\ReadOnly\Helpers\ReadOnlyHelper;
 use ZnLib\Components\SoftDelete\Traits\Entity\SoftDeleteEntityTrait;
@@ -42,7 +42,7 @@ class ItemEntity implements ValidationByMetadataInterface, EntityIdInterface, Un
     private $parent;
     private $children;
 
-    /* @var \ZnCore\Domain\Collection\Interfaces\Enumerable | ItemTranslationEntity[] */
+    /* @var \ZnCore\Collection\Interfaces\Enumerable | ItemTranslationEntity[] */
 //    private $translations = null;
 
     public function __construct(RuntimeLanguageServiceInterface $languageService)
