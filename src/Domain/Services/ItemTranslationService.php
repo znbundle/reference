@@ -4,7 +4,7 @@ namespace ZnBundle\Reference\Domain\Services;
 
 use ZnBundle\Reference\Domain\Interfaces\Repositories\ItemTranslationRepositoryInterface;
 use ZnBundle\Reference\Domain\Interfaces\Services\ItemTranslationServiceInterface;
-use ZnCore\Service\Base\BaseCrudService;
+use ZnDomain\Service\Base\BaseCrudService;
 
 class ItemTranslationService extends BaseCrudService implements ItemTranslationServiceInterface
 {

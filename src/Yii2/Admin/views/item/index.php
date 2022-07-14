@@ -14,7 +14,7 @@ use ZnBundle\Reference\Yii2\Admin\Formatters\Actions\ItemListAction;
 use ZnCore\Arr\Helpers\ArrayHelper;
 use ZnLib\I18Next\Facades\I18Next;
 use ZnCore\Validation\Interfaces\ValidationByMetadataInterface;
-use ZnCore\DataProvider\Libs\DataProvider;
+use ZnDomain\DataProvider\Libs\DataProvider;
 use ZnLib\Web\TwBootstrap\Widgets\Collection\CollectionWidget;
 use ZnLib\Web\TwBootstrap\Widgets\Format\Formatters\ActionFormatter;
 use ZnLib\Web\TwBootstrap\Widgets\Format\Formatters\Actions\DeleteAction;

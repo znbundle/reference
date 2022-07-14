@@ -9,11 +9,11 @@ use ZnBundle\Reference\Domain\Interfaces\Repositories\BookRepositoryInterface;
 use ZnBundle\Reference\Domain\Interfaces\Repositories\ItemRepositoryInterface;
 use ZnCore\Validation\Exceptions\UnprocessibleEntityException;
 use ZnCore\Entity\Exceptions\NotFoundException;
-use ZnCore\Domain\Enums\RelationEnum;
+use ZnDomain\Domain\Enums\RelationEnum;
 use ZnCore\Query\Entities\Query;
-use ZnCore\Relation\Libs\Types\OneToManyRelation;
-use ZnCore\Relation\Libs\Types\OneToOneRelation;
-use ZnCore\Repository\Mappers\JsonMapper;
+use ZnDomain\Relation\Libs\Types\OneToManyRelation;
+use ZnDomain\Relation\Libs\Types\OneToOneRelation;
+use ZnDomain\Repository\Mappers\JsonMapper;
 use ZnDatabase\Eloquent\Domain\Base\BaseEloquentCrudRepository;
 
 class ItemRepository extends BaseEloquentCrudRepository implements ItemRepositoryInterface

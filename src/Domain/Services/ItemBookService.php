@@ -9,7 +9,7 @@ use ZnBundle\Reference\Domain\Interfaces\Services\ItemServiceInterface;
 use ZnBundle\Reference\Domain\Subscribers\BookIdSubscriber;
 use ZnLib\Components\Status\Enums\StatusEnum;
 use ZnCore\Query\Entities\Where;
-use ZnCore\EntityManager\Interfaces\EntityManagerInterface;
+use ZnDomain\EntityManager\Interfaces\EntityManagerInterface;
 use ZnCore\Query\Entities\Query;
 
 class ItemBookService extends ItemService implements ItemBookServiceInterface

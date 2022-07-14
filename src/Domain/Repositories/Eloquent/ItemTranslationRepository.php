@@ -6,7 +6,7 @@ use ZnBundle\Reference\Domain\Entities\ItemTranslationEntity;
 use ZnBundle\Reference\Domain\Interfaces\Repositories\ItemTranslationRepositoryInterface;
 use ZnLib\I18Next\Facades\I18Next;
 use ZnCore\Query\Entities\Where;
-use ZnCore\EntityManager\Interfaces\EntityManagerInterface;
+use ZnDomain\EntityManager\Interfaces\EntityManagerInterface;
 use ZnCore\Query\Entities\Query;
 use ZnDatabase\Eloquent\Domain\Base\BaseEloquentCrudRepository;
 use ZnDatabase\Eloquent\Domain\Capsule\Manager;
