@@ -11,8 +11,8 @@ use ZnLib\Components\ReadOnly\Helpers\ReadOnlyHelper;
 use ZnCore\Entity\Interfaces\UniqueInterface;
 use ZnCore\Enum\Constraints\Enum;
 use ZnLib\Components\I18n\Traits\I18nTrait;
-use ZnLib\Components\SoftDelete\Traits\Entity\SoftDeleteEntityTrait;
-use ZnLib\Components\SoftDelete\Traits\Entity\SoftRestoreEntityTrait;
+use ZnDomain\Сomponents\SoftDelete\Traits\Entity\SoftDeleteEntityTrait;
+use ZnDomain\Сomponents\SoftDelete\Traits\Entity\SoftRestoreEntityTrait;
 use ZnCore\Validation\Interfaces\ValidationByMetadataInterface;
 use ZnCore\Entity\Interfaces\EntityIdInterface;
 

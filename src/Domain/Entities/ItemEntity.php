@@ -13,8 +13,8 @@ use ZnCore\Entity\Interfaces\EntityIdInterface;
 use ZnCore\Entity\Interfaces\UniqueInterface;
 use ZnLib\Components\I18n\Traits\I18nTrait;
 use ZnLib\Components\ReadOnly\Helpers\ReadOnlyHelper;
-use ZnLib\Components\SoftDelete\Traits\Entity\SoftDeleteEntityTrait;
-use ZnLib\Components\SoftDelete\Traits\Entity\SoftRestoreEntityTrait;
+use ZnDomain\Сomponents\SoftDelete\Traits\Entity\SoftDeleteEntityTrait;
+use ZnDomain\Сomponents\SoftDelete\Traits\Entity\SoftRestoreEntityTrait;
 use ZnLib\Components\Status\Enums\StatusEnum;
 
 class ItemEntity implements ValidationByMetadataInterface, EntityIdInterface, UniqueInterface

@@ -3,15 +3,15 @@
 namespace ZnBundle\Reference\Domain\Services;
 
 use ZnBundle\Reference\Domain\Entities\BookEntity;
-use ZnLib\Components\SoftDelete\Subscribers\SoftDeleteSubscriber;
+use ZnDomain\Сomponents\SoftDelete\Subscribers\SoftDeleteSubscriber;
 use ZnBundle\Reference\Domain\Interfaces\Repositories\BookRepositoryInterface;
 use ZnBundle\Reference\Domain\Interfaces\Services\BookServiceInterface;
 use ZnDomain\Service\Base\BaseCrudService;
 use ZnCore\Query\Entities\Where;
 use ZnDomain\EntityManager\Interfaces\EntityManagerInterface;
 use ZnCore\Query\Entities\Query;
-use ZnLib\Components\SoftDelete\Traits\Service\SoftDeleteTrait;
-use ZnLib\Components\SoftDelete\Traits\Service\SoftRestoreTrait;
+use ZnDomain\Сomponents\SoftDelete\Traits\Service\SoftDeleteTrait;
+use ZnDomain\Сomponents\SoftDelete\Traits\Service\SoftRestoreTrait;
 
 class BookService extends BaseCrudService implements BookServiceInterface
 {
