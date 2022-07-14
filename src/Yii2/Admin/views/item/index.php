@@ -12,21 +12,21 @@ use yii\web\Request;
 use yii\web\View;
 use ZnBundle\Reference\Yii2\Admin\Formatters\Actions\ItemListAction;
 use ZnCore\Arr\Helpers\ArrayHelper;
-use ZnLib\I18Next\Facades\I18Next;
 use ZnCore\Validation\Interfaces\ValidationByMetadataInterface;
 use ZnDomain\DataProvider\Libs\DataProvider;
+use ZnLib\Components\Status\Enums\StatusSimpleEnum;
+use ZnLib\I18Next\Facades\I18Next;
 use ZnLib\Web\TwBootstrap\Widgets\Collection\CollectionWidget;
 use ZnLib\Web\TwBootstrap\Widgets\Format\Formatters\ActionFormatter;
 use ZnLib\Web\TwBootstrap\Widgets\Format\Formatters\Actions\DeleteAction;
 use ZnLib\Web\TwBootstrap\Widgets\Format\Formatters\Actions\UpdateAction;
 use ZnLib\Web\TwBootstrap\Widgets\Format\Formatters\EnumFormatter;
 use ZnLib\Web\TwBootstrap\Widgets\Format\Formatters\LinkFormatter;
-use ZnSandbox\Sandbox\Status\Domain\Enums\StatusEnum;
 use ZnSandbox\Sandbox\Status\Web\Widgets\FilterWidget;
 
 $this->title = I18Next::t('reference', 'item.list');
 
-$statusWidget = new FilterWidget(StatusEnum::class, $filterModel);
+$statusWidget = new FilterWidget(StatusSimpleEnum::class, $filterModel);
 $filter = $request->getQueryParam('filter');
 $bookId = ArrayHelper::getValue($filter, 'book_id');
 
@@ -52,7 +52,7 @@ $attributes = [
         'attributeName' => 'status_id',
         'formatter' => [
             'class' => EnumFormatter::class,
-            'enumClass' => StatusEnum::class,
+            'enumClass' => StatusSimpleEnum::class,
         ],
     ],
     [

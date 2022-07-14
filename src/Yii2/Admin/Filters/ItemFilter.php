@@ -6,18 +6,18 @@ use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Component\Validator\Mapping\ClassMetadata;
 use ZnCore\Enum\Constraints\Enum;
 use ZnCore\Validation\Interfaces\ValidationByMetadataInterface;
-use ZnSandbox\Sandbox\Status\Domain\Enums\StatusEnum;
+use ZnLib\Components\Status\Enums\StatusSimpleEnum;
 
 class ItemFilter implements ValidationByMetadataInterface
 {
 
     protected $bookId;
-    protected $statusId = StatusEnum::ENABLED;
+    protected $statusId = StatusSimpleEnum::ENABLED;
 
     public static function loadValidatorMetadata(ClassMetadata $metadata)
     {
         $metadata->addPropertyConstraint('statusId', new Enum([
-            'class' => StatusEnum::class,
+            'class' => StatusSimpleEnum::class,
         ]));
         $metadata->addPropertyConstraint('bookId', new Assert\Positive());
     }

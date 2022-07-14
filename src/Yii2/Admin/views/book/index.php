@@ -7,23 +7,23 @@
  * @var ValidationByMetadataInterface $filterModel
  */
 
-use ZnBundle\Reference\Yii2\Admin\Formatters\Actions\ItemListAction;
-use ZnSandbox\Sandbox\Status\Domain\Enums\StatusEnum;
-use ZnSandbox\Sandbox\Status\Web\Widgets\FilterWidget;
 use yii\helpers\Url;
 use yii\web\Request;
 use yii\web\View;
-use ZnLib\I18Next\Facades\I18Next;
+use ZnBundle\Reference\Yii2\Admin\Formatters\Actions\ItemListAction;
 use ZnCore\Validation\Interfaces\ValidationByMetadataInterface;
 use ZnDomain\DataProvider\Libs\DataProvider;
+use ZnLib\Components\Status\Enums\StatusSimpleEnum;
+use ZnLib\I18Next\Facades\I18Next;
 use ZnLib\Web\TwBootstrap\Widgets\Collection\CollectionWidget;
 use ZnLib\Web\TwBootstrap\Widgets\Format\Formatters\ActionFormatter;
 use ZnLib\Web\TwBootstrap\Widgets\Format\Formatters\EnumFormatter;
 use ZnLib\Web\TwBootstrap\Widgets\Format\Formatters\LinkFormatter;
+use ZnSandbox\Sandbox\Status\Web\Widgets\FilterWidget;
 
 $this->title = I18Next::t('reference', 'book.list');
 
-$statusWidget = new FilterWidget(StatusEnum::class, $filterModel);
+$statusWidget = new FilterWidget(StatusSimpleEnum::class, $filterModel);
 
 $attributes = [
     [
@@ -49,7 +49,7 @@ $attributes = [
         'attributeName' => 'status_id',
         'formatter' => [
             'class' => EnumFormatter::class,
-            'enumClass' => StatusEnum::class,
+            'enumClass' => StatusSimpleEnum::class,
         ],
     ],
     [
