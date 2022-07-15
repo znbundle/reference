@@ -7,9 +7,9 @@ use ZnDomain\Сomponents\SoftDelete\Subscribers\SoftDeleteSubscriber;
 use ZnBundle\Reference\Domain\Interfaces\Repositories\BookRepositoryInterface;
 use ZnBundle\Reference\Domain\Interfaces\Services\BookServiceInterface;
 use ZnDomain\Service\Base\BaseCrudService;
-use ZnCore\Query\Entities\Where;
+use ZnDomain\Query\Entities\Where;
 use ZnDomain\EntityManager\Interfaces\EntityManagerInterface;
-use ZnCore\Query\Entities\Query;
+use ZnDomain\Query\Entities\Query;
 use ZnDomain\Сomponents\SoftDelete\Traits\Service\SoftDeleteTrait;
 use ZnDomain\Сomponents\SoftDelete\Traits\Service\SoftRestoreTrait;
 

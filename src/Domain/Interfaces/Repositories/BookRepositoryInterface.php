@@ -4,7 +4,7 @@ namespace ZnBundle\Reference\Domain\Interfaces\Repositories;
 
 use ZnBundle\Reference\Domain\Entities\BookEntity;
 use ZnDomain\Repository\Interfaces\CrudRepositoryInterface;
-use ZnCore\Query\Entities\Query;
+use ZnDomain\Query\Entities\Query;
 
 interface BookRepositoryInterface extends CrudRepositoryInterface
 {

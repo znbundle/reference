@@ -12,7 +12,7 @@ use yii\web\Request;
 use yii\web\View;
 use ZnBundle\Reference\Yii2\Admin\Formatters\Actions\ItemListAction;
 use ZnCore\Arr\Helpers\ArrayHelper;
-use ZnCore\Validation\Interfaces\ValidationByMetadataInterface;
+use ZnDomain\Validator\Interfaces\ValidationByMetadataInterface;
 use ZnDomain\DataProvider\Libs\DataProvider;
 use ZnLib\Components\Status\Enums\StatusSimpleEnum;
 use ZnLib\I18Next\Facades\I18Next;

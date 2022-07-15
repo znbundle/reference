@@ -8,13 +8,13 @@ use Symfony\Component\Validator\Mapping\ClassMetadata;
 use ZnBundle\Language\Domain\Interfaces\Services\RuntimeLanguageServiceInterface;
 use ZnLib\Components\Status\Enums\StatusEnum;
 use ZnLib\Components\ReadOnly\Helpers\ReadOnlyHelper;
-use ZnCore\Entity\Interfaces\UniqueInterface;
+use ZnDomain\Entity\Interfaces\UniqueInterface;
 use ZnCore\Enum\Constraints\Enum;
 use ZnLib\Components\I18n\Traits\I18nTrait;
 use ZnDomain\Сomponents\SoftDelete\Traits\Entity\SoftDeleteEntityTrait;
 use ZnDomain\Сomponents\SoftDelete\Traits\Entity\SoftRestoreEntityTrait;
-use ZnCore\Validation\Interfaces\ValidationByMetadataInterface;
-use ZnCore\Entity\Interfaces\EntityIdInterface;
+use ZnDomain\Validator\Interfaces\ValidationByMetadataInterface;
+use ZnDomain\Entity\Interfaces\EntityIdInterface;
 
 class BookEntity implements ValidationByMetadataInterface, EntityIdInterface, UniqueInterface
 {

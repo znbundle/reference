@@ -4,8 +4,8 @@ namespace ZnBundle\Reference\Domain\Repositories\Eloquent;
 
 use ZnBundle\Reference\Domain\Entities\BookEntity;
 use ZnBundle\Reference\Domain\Interfaces\Repositories\BookRepositoryInterface;
-use ZnCore\Query\Entities\Where;
-use ZnCore\Query\Entities\Query;
+use ZnDomain\Query\Entities\Where;
+use ZnDomain\Query\Entities\Query;
 use ZnDatabase\Eloquent\Domain\Base\BaseEloquentCrudRepository;
 use ZnDomain\Repository\Mappers\JsonMapper;
 

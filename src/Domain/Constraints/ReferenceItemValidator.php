@@ -8,10 +8,10 @@ use Symfony\Component\Validator\Exception\UnexpectedTypeException;
 use Symfony\Component\Validator\Exception\UnexpectedValueException;
 use ZnBundle\Reference\Domain\Entities\ItemEntity;
 use ZnBundle\Reference\Domain\Interfaces\Repositories\ItemRepositoryInterface;
-use ZnCore\Entity\Exceptions\NotFoundException;
+use ZnDomain\Entity\Exceptions\NotFoundException;
 use ZnCore\Container\Helpers\ContainerHelper;
-use ZnCore\Validation\Exceptions\UnprocessibleEntityException;
-use ZnCore\Query\Entities\Query;
+use ZnDomain\Validator\Exceptions\UnprocessibleEntityException;
+use ZnDomain\Query\Entities\Query;
 use ZnKaz\Iin\Domain\Helpers\IinParser;
 use Exception;
 
