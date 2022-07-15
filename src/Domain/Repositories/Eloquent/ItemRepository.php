@@ -8,7 +8,7 @@ use ZnBundle\Reference\Domain\Filters\ItemFilter;
 use ZnBundle\Reference\Domain\Interfaces\Repositories\BookRepositoryInterface;
 use ZnBundle\Reference\Domain\Interfaces\Repositories\ItemRepositoryInterface;
 use ZnDomain\Validator\Exceptions\UnprocessibleEntityException;
-use ZnDomain\Entity\Exceptions\NotFoundException;
+use ZnCore\Contract\Common\Exceptions\NotFoundException;
 use ZnDomain\Domain\Enums\RelationEnum;
 use ZnDomain\Query\Entities\Query;
 use ZnDomain\Relation\Libs\Types\OneToManyRelation;
