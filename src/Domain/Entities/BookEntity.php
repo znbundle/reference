@@ -154,7 +154,7 @@ class BookEntity implements ValidationByMetadataInterface, EntityIdInterface, Un
 
     public function setStatusId(int $value): void
     {
-        ReadOnlyHelper::checkAttribute($this->statusId, $value);
+        ReadOnlyHelper::checkAttribute($this->statusId, $value, $this, 'statusId');
         $this->statusId = $value;
     }
 
